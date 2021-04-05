@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class SiteAppIvgConfig(AppConfig):
-    name = 'SITE_APP_IVG'
+class AppIvgConfig(AppConfig):
+    name = 'APP_IVG'

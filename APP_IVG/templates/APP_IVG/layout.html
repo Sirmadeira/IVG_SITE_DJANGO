@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	{% if titulo %}
+		<title>IVG - {{ titulo }}</title>
+	{% else %}	
+		<title>IVG</title>
+	{% endif%}
+</head>
+<body>
+	{% block content %} {% endblock %}
+</body>
+</html>

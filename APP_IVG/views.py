@@ -1,11 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 def Homepage(request):
-	return HttpResponse('<h1> IVG HOME </h1>')
+	return render(request, 'APP_IVG/homepage.html')
 
 def Sobre(request):
-	return HttpResponse('<h1> IVG SOBRE </h1>')
+	return render(request,'APP_IVG/sobre.html', {'titulo': 'Sobre'})
 
 # Create your views here.

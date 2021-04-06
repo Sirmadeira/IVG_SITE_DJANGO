@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Dado 
 
 def Homepage(request):
 	return render(request, 'APP_IVG/homepage.html')

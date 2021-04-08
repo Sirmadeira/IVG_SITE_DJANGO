@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from usuarios import views as usuarios_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,3 +28,7 @@ urlpatterns = [
     path('Logout/', auth_views.LogoutView.as_view(template_name='usuarios/logout.html'), name= 'Logout'),
     path('', include('APP_IVG.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

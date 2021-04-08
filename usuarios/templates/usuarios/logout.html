@@ -1,0 +1,9 @@
+{% extends "APP_IVG/layout.html" %}
+{% block content %}
+	<h2> Você foi deslogado! </h2>
+	<div class= "border-top pt-3">
+		<small class= "text-muted"> 
+			<a href = "{% url 'Login' %}"> De login denovo </a>
+		</small>
+	</div>	
+{% endblock content %}

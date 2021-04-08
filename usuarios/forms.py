@@ -5,6 +5,6 @@ from django.contrib.auth.forms import UserCreationForm
 class UserCadastroForm(UserCreationForm):
 	email = forms.EmailField()
 
-	class meta:
+	class Meta:
 		model = User
-		fields = ['Usuario', 'Email', 'Password1', 'Password2' ]
+		fields = ['username', 'email', 'password1', 'password2' ]

@@ -25,7 +25,28 @@ urlpatterns = [
     path('Cadastro/', usuarios_views.Cadastro, name= 'Cadastro'),
     path('Empresa/', usuarios_views.Empresa, name= 'Empresa'),
     path('Login/', auth_views.LoginView.as_view(template_name='usuarios/login.html'), name= 'Login'),
-    path('Logout/', auth_views.LogoutView.as_view(template_name='usuarios/logout.html'), name= 'Logout'),
+    path('Logout/', auth_views.LogoutView.as_view(template_name='usuarios/logout.html'), name= 'Logout'),   
+    #Essas views estao em minusculo porque django e chato, e nao aceita views de reset com primeira letra maiuscula
+     path('password-reset/',
+         auth_views.PasswordResetView.as_view(
+             template_name='usuarios/password_reset.html'
+         ),
+         name='password_reset'),
+    path('password-reset/done/',
+         auth_views.PasswordResetDoneView.as_view(
+             template_name='usuarios/password_reset_done.html'
+         ),
+         name='password_reset_done'),
+    path('password-reset-confirm/<uidb64>/<token>/',
+         auth_views.PasswordResetConfirmView.as_view(
+             template_name='usuarios/password_reset_confirm.html'
+         ),
+         name='password_reset_confirm'),
+    path('password-reset-complete/',
+         auth_views.PasswordResetCompleteView.as_view(
+             template_name='usuarios/password_reset_complete.html'
+         ),
+         name='password_reset_complete'),
     path('', include('APP_IVG.urls')),
 ]
 

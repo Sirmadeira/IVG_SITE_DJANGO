@@ -21,11 +21,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    #Essas view seria a dos administradores
     path('admin/', admin.site.urls),
+
+    #Essas views sao relacionadas o usuario
     path('Cadastro/', usuarios_views.Cadastro, name= 'Cadastro'),
     path('Empresa/', usuarios_views.Empresa, name= 'Empresa'),
     path('Login/', auth_views.LoginView.as_view(template_name='usuarios/login.html'), name= 'Login'),
-    path('Logout/', auth_views.LogoutView.as_view(template_name='usuarios/logout.html'), name= 'Logout'),   
+    path('Logout/', auth_views.LogoutView.as_view(template_name='usuarios/logout.html'), name= 'Logout'),
+
     #Essas views estao em minusculo porque django e chato, e nao aceita views de reset com primeira letra maiuscula
      path('password-reset/',
          auth_views.PasswordResetView.as_view(
@@ -48,6 +52,7 @@ urlpatterns = [
          ),
          name='password_reset_complete'),
     path('', include('APP_IVG.urls')),
+    path('Dado/', include('dado.urls')),
 ]
 
 if settings.DEBUG:

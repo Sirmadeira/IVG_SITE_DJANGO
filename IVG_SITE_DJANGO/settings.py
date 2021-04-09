@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'APP_IVG.apps.AppIvgConfig',
     'usuarios.apps.UsuariosConfig',
+    'dado.apps.DadoConfig',
     'crispy_forms', 
     'django.contrib.admin',
     'django.contrib.auth',

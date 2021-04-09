@@ -10,7 +10,11 @@ def InsiraDado(request):
 	if request.method == 'POST':
 		form = InsiraDadosForm(request.POST)
 		if form.is_valid():
+			submitbutton= request.POST.get("submit")
 			form.instance.autor = request.user
+			preco=form.cleaned_data.get('preco')
+			lucro=form.cleaned_data.get('lucro')
+			form.instance.margem_de_lucro = (lucro/preco)*100
 			form.save()
 			print(request.POST)
 			messages.success(request, f'Seus dados foram inseridos com sucesso!')

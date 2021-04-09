@@ -6,27 +6,32 @@ from django.conf import settings
 User= settings.AUTH_USER_MODEL
 
 class DataDB(models.Model):
-	marca=models.CharField(max_length = 30, default ="ACURA")
+	marca=models.CharField(max_length = 30,error_messages={'required':'Favor inserir uma marca'})
 
-	modelo=models.CharField(max_length = 30, default="XWZ")
+	modelo=models.CharField(max_length = 60,error_messages={'required':'Favor inserir um modelo'})
 
-	ano=models.IntegerField(default= 2021)
+	ano=models.IntegerField(
+		validators=[MinValueValidator(1960,'Favor inserir acima 1960.'), MaxValueValidator(2023,'Favor inserir abaixo 2023.')],
+		error_messages={'required':'Favor inserir uma ano'})
 
-	status=models.CharField(max_length= 10,default= "BOM")
+	status=models.CharField(max_length= 10)
 
-	cor=models.CharField(max_length= 10, default= "VERMELHO")
+	cor=models.CharField(max_length= 20)
 
-	combustivel=models.CharField(max_length= 10,default= "FLEX")
+	combustivel=models.CharField(max_length= 15)
 
-	quilometragem=models.DecimalField(max_digits= 10,decimal_places=2,max_length= 12,default=100)
+	quilometragem=models.DecimalField(max_digits= 10,decimal_places=2,max_length= 12,
+		error_messages={'required':'Favor inserir a quilometragem','max_digits':'Favor inserir uma kilometragem menor.','decimal_places':'Favor so por 2 casas decimais.'})
 
-	lucro=models.DecimalField(max_digits= 10,decimal_places=2,max_length= 12,default=100)
+	lucro=models.DecimalField(max_digits= 10,decimal_places=2,max_length= 12,
+		error_messages={'required':'Favor inserir o lucro','max_digits':'Favor inserir um lucro menor.','decimal_places':'Favor so por 2 casas decimais.'})
 
-	preco=models.DecimalField(max_digits= 10,decimal_places=2,max_length= 12,default=100)
+	preco=models.DecimalField(max_digits= 10,decimal_places=2,max_length= 12,
+		error_messages={'required':'Favor inserir o lucro','max_digits':'Favor inserir um lucro menor.','decimal_places':'Favor so por 2 casas decimais.'})
 
-	margem_de_lucro=models.DecimalField(max_digits= 10,decimal_places=2,max_length= 12,default=100)
+	margem_de_lucro=models.DecimalField(max_digits= 10,decimal_places=3,max_length= 12)
 
 	data_postada = models.DateTimeField(default=timezone.now)
 
-	autor = models.ForeignKey(User, on_delete=models.CASCADE, default = 1)
+	autor = models.ForeignKey(User, on_delete=models.CASCADE)
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Dado
+from .models import DadoDB
 
-admin.site.register(Dado)
+admin.site.register(DadoDB)
 # Register your models here.

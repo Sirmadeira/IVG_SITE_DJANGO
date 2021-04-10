@@ -4,7 +4,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth.models import User
 
 
-class Dado(models.Model):
+class DadoDB(models.Model):
 	marca=models.CharField(max_length = 30, default ="ACURA")
 
 	modelo=models.CharField(max_length = 30, default="XWZ")
@@ -28,5 +28,9 @@ class Dado(models.Model):
 	data_postada = models.DateTimeField(default=timezone.now)
 
 	autor= models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+	def __str__(self):
+		return f'{self.user.username} Empresa'
 	
 # Create your models here.

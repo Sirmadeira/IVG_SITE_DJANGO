@@ -51,7 +51,11 @@ urlpatterns = [
              template_name='usuarios/password_reset_complete.html'
          ),
          name='password_reset_complete'),
-    path('', include('APP_IVG.urls'))
+
+    # Path para principal
+    path('', include('APP_IVG.urls')),
+    # Views para dados
+    path('Data/', include('data.urls')),
 ]
 
 if settings.DEBUG:

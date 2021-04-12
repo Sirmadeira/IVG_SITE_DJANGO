@@ -51,8 +51,7 @@ urlpatterns = [
              template_name='usuarios/password_reset_complete.html'
          ),
          name='password_reset_complete'),
-    path('', include('APP_IVG.urls')),
-    path('Dado/', include('dado.urls')),
+    path('', include('APP_IVG.urls'))
 ]
 
 if settings.DEBUG:

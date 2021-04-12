@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!-- Convencao html -->
 <!DOCTYPE html>
 <html>
@@ -45,9 +46,8 @@
       </nav>
     </header>
     <!-- Final de navbar -->
-    <main role="main" class="container">
-    <div class="row">
-	   <div class="col-md-8">
+    <main role="main" class="container-fluid p-0 mt-5">
+	   <div class="col-md mx-auto mt-5 p-0">
       {% if messages %}
         {% for message in messages %}
           <div class= "alert alert-{{ message.tags }}">
@@ -57,7 +57,6 @@
       {% endif %}
 		  {% block content %}{% endblock %}
 	   </div>
-	  </div>
     </main>
     <!-- Bootstrap -->
     <!-- Rodapé -->
@@ -65,7 +64,7 @@
           <div class="container text-center mt-1">
             <div class="row">
                 <div class="col-xl my-auto py-auto">
-                  <ul  style="list-style: none; font-size: 14px; padding: 0 0; display: inline-flex;">
+                  <ul  style="list-style: none; font-size: 14px; padding: 0; display: inline-flex;">
                       <li><a href="{'https://www.facebook.com/ivgtecnologiadedados'}" target="_blank"><img src="{% static 'imagens/Footer-Facebook.png' %}" class="redesocial"></a></li> 
                       <li><a href="{'https://twitter.com/ivgtech'}" target="_blank"><img src="{% static 'imagens/Footer-Twitter.png' %}" class="redesocial2"></a></li> 
                       <li><a href="{'https://www.linkedin.com/company/ivgtecnologia-de-dados/about/?viewAsMember=true'}" target="_blank">

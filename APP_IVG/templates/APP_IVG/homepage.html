@@ -1,7 +1,8 @@
 {% extends "APP_IVG/layout.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
 {% load static %}
-<div id="carouselExampleIndicators" class="carousel slide m-auto" style="height: auto; max-height: 900px; width: 100%;" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide text-center mt-4" style="height: auto; max-height: 900px; width: 100%;" data-ride="carousel">
   <ol class="carousel-indicators mx-auto my-0 text-center" style="width: 30vw;">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -38,10 +39,10 @@
       </div>
     </div>
     <div class="carousel-item" style="height: auto; max-height: 900px;">
-      <img class="d-block w-100" src="{%static 'imagens/Homepage-Slide04.jpg'}" alt="Quarto Slide" style="opacity: 1">
+      <img class="d-block w-100" src="{%static 'imagens/Homepage-Slide04.jpg' %}" alt="Quarto Slide" style="opacity: 1">
     </div>
        <div class="carousel-item" style="height: auto; max-height: 900px;">
-      <img class="d-block w-100" src="{%static 'imagens/Homepage-Slide05.jpg'}" alt="Quinto Slide" style="opacity: 1">
+      <img class="d-block w-100" src="{%static 'imagens/Homepage-Slide05.jpg' %}" alt="Quinto Slide" style="opacity: 1">
       <div class="carousel-caption d-lg-block">
         <div style="background-color: black; opacity: .9; margin-bottom: 12vw;">
     <h5 style="color:white; font-size: 2.5vw;"></h5>
@@ -61,22 +62,22 @@
 </div>
 <div class="container text-center mt-5 mb-5">
   <div class="row">
-    <div class="col-4-lg m-3">
+    <div class="col-lg m-2 pr-0">
         <img class="text-center" src="{% static 'imagens/Homepage-Main-Segurança.png' %}" alt="Responsive image" style="min-height: 100px; max-height: 150px;">
         <h1 style="margin: auto; font-size: 20px; letter-spacing: 2px; margin-top: 3px; margin-bottom: 5px;">Segurança</h1>
-        <p style="font-size: 16px; letter-spacing: 2px; font-weight: bold;">A IVG garante a proteção de seus dados. Tambem garantimos nenhum dos nossos gráficos, irá destacar somente os dados da sua empresa. Tornando impossivél identificar qual dos parceiros foi o emitente.</p>      
+        <p class="text-justify" style="font-size: 16px; letter-spacing: 2px; font-weight: bold;">A IVG garante a proteção de seus dados. Tambem garantimos nenhum dos nossos gráficos, irá destacar somente os dados da sua empresa. Tornando impossível identificar qual dos parceiros foi o emitente.</p>      
         </div>
-        <div class="col-4-lg m-3">
+        <div class="col-lg m-2">
            <img class="text-center mb-1" src="{% static 'imagens/Homepage-Main-Info.png' %}" alt="Responsive image" style="min-height: 100px; max-height: 150px">
             <h1 style="margin: auto; font-size: 20px; letter-spacing: 2px;">Informações de Dados<h1>
-          <p style="font-size: 16px; letter-spacing: 2px; margin-top: 5px;">Nossa função é reformular os dados seus e de seus concorrente para que todos tenham a capacidade de ter uma leitura de mercado que beira a perfeição de uma máquina.</p>
+          <p class="text-justify" style="font-size: 16px; letter-spacing: 2px; margin-top: 5px;">Nossa função é reformular os dados seus e de seus concorrente para que todos tenham a capacidade de ter uma leitura de mercado que beira a perfeição de uma máquina.</p>
         </div>
-        <div class="col-4-lg m-3">
+        <div class="col-lg m-2">
            <img class="text-center mb-3" src="{% static 'imagens/Homepage-Main-Antifraude.png' %}" alt="Responsive image" style="min-height: 100px; max-height: 140px; margin: 0 auto;">
         <h1 style="font-size: 20px; margin: auto; letter-spacing: 2px;">Antifraude<h1>
-           <p style="font-size: 16px; letter-spacing: 2px;  margin-top: 5px">Atuamos de maneira totalmente jurídica, qualquer oferta para venda de seus dados será severamente rejeitada, e caso nosso sistema de segurança venha a ser rompido o parceiro será devidamente ressarcido, pelo nosso seguro. </p>
-      </h1>
-      </div>
+           <p class="text-justify" style="font-size: 16px; letter-spacing: 2px;  margin-top: 5px">Atuamos de maneira totalmente jurídica, qualquer oferta para venda de seus dados será severamente rejeitada, e caso nosso sistema de segurança venha a ser rompido o parceiro será devidamente ressarcido, pelo nosso seguro.</p>
+        </h1>
     </div>
+  </div>
 </div>
 {% endblock content %}

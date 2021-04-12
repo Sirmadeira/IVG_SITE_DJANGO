@@ -17,3 +17,6 @@ def InsiraDado(request):
 	else:
 		form = InsiraDadosForm()
 	return render(request, 'data/insiradado.html', {'form': form})
+
+def VisualizarMercado(request):
+	return render(request, 'data/visualizarmercado.html')

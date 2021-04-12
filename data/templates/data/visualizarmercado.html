@@ -1,4 +1,14 @@
 {% extends "APP_IVG/layout.html" %}
 {% block content %}
-	<h1>Template visualizarmercaodo</h1>
+	<table class="table table-striped table-hover">
+		<thead>
+            <th>Marca</th>
+            <th>Modelo</th>
+        </thead>
+		{% for q in query1 %}
+		<tr>
+			<td> {{ q }} </td>
+		</tr>
+		{% endfor %}
+	</table>
 {% endblock content %}

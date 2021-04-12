@@ -33,8 +33,9 @@
             <!-- Lado direito da navbar -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
-                <a class="nav-item nav-link" href="{% url 'Empresa' %}">Sua empresa</a>
+                <a class="nav-item nav-link" href="{% url 'data-VisualizarMercado' %}">Dados de mercado</a>
                 <a class="nav-item nav-link" href="{% url 'data-InsiraDado' %}">Inserir dados</a>
+                <a class="nav-item nav-link" href="{% url 'Empresa' %}">Sua empresa</a>
                 <a class="nav-item nav-link" href="{% url 'Logout' %}">Logout</a>
               {% else %}
                 <a class="nav-item nav-link" href="{% url 'Login' %}">Login</a>

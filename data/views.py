@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import InsiraDadosForm
+from .models import DataDB
 
 
 @login_required
@@ -19,4 +20,5 @@ def InsiraDado(request):
 	return render(request, 'data/insiradado.html', {'form': form})
 
 def VisualizarMercado(request):
-	return render(request, 'data/visualizarmercado.html')
+	query1= DataDB.objects.all()
+	return render(request, 'data/visualizarmercado.html', {'query1': query1})

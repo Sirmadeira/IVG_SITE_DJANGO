@@ -20,10 +20,9 @@ h1, h5, p, ol, span, form{
 /*Tags da navbar*/
 .logo{
   position: relative;
-  height: 250px;
+  height: 200px;
 width: auto;
-padding: 0 10px;
-margin: -80px -70px auto -40px;
+margin: -80px auto;
 }
 
 .site-header .bg-steel {
@@ -39,7 +38,6 @@ div.navbar-nav {
    margin: auto auto auto auto;
    height: auto;
    padding: 0;
-
 }
 .site-header .navbar-nav .nav-link {
  list-style: none;
@@ -54,6 +52,7 @@ div.navbar-nav {
   transition-duration: .2s;
   transition-timing-function: linear;
   transition-property: all;
+  color: white;
 }
 .site-header .navbar-nav .nav-link:hover {
   background-color: rgba(82,168,236,1);

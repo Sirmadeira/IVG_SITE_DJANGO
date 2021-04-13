@@ -20,9 +20,9 @@
 <body>
   <!-- Navbar -->
 	<header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <nav class="navbar navbar-expand-md navbar-steel bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-5" href="{% url 'APP_IVG-Homepage' %}">IVG tecnologia</a>
+          <a class="navbar-brand mr-5" href="{% url 'APP_IVG-Homepage' %}"><img class="logo py-3" src="{% static 'imagens/Logo-IVG-azulclaro.png' %}"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -38,7 +38,7 @@
                 <a class="nav-item nav-link" href="{% url 'Logout' %}">Logout</a>
               {% else %}
                 <a class="nav-item nav-link" href="{% url 'Login' %}">Login</a>
-                <a class="nav-item nav-link" href="{% url 'Cadastro' %}">Register</a>
+                <a class="nav-item nav-link" href="{% url 'Cadastro' %}">Cadastro</a>
               {% endif %}
             </div>
           </div>

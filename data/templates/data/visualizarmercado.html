@@ -1,6 +1,7 @@
 {% extends "APP_IVG/layout.html" %}
 {% block content %}
-	<table class="table table-striped table-hover">
+
+	<table class="table table-striped table-dark">
 		<thead>
             <th>Marca</th>
             <th>Modelo</th>
@@ -11,7 +12,6 @@
             <th>Quilometragem</th>
             <th>Lucro</th>
             <th>Preco</th>
-            <th>Editar</th>
             <th>Deletar</th>
 
         </thead>
@@ -26,9 +26,9 @@
 			<td> {{ q.quilometragem }} </td>
 			<td> {{ q.lucro }} </td>
 			<td> {{ q.preco }} </td>>
-			<td><a href="{% url 'data-Editar' q.id %}" class="btn btn-primary btn-xs"></a></td>
-			<td><a href="{% url 'data-Deletar' q.id %}" class="btn btn-danger btn-xs"></a></td>
+			<td><a href="{% url 'data-Deletar' q.id %}" class="btn btn-danger"></a></td>
 		</tr>
 		{% endfor %}
 	</table>
+
 {% endblock content %}

@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 from .forms import InsiraDadosForm
 from .models import DataDB
 
-# Views crud
 
 @login_required
 def InsiraDado(request):
@@ -20,23 +19,6 @@ def InsiraDado(request):
 		form = InsiraDadosForm()
 	return render(request, 'data/insiradado.html', {'form': form})
 
-def edit(request, id):
-    query = DataDB.objects.get(id=id)
-    return render(request, 'edit.html', {'query': query})
-
-def update(request, id):
-    query = DataDB.objects.get(id=id)  
-    form = InsiraDadoForms(request.POST, instance = datadb)  
-    if form.is_valid():  
-        form.save()  
-        return redirect("/")
-    return render(request, 'edit.html', {'query': query})
-
-def delete(request, id):
-    query = DataDB.objects.get(id=id)
-    query.delete()
-    return redirect('/')
-
 def VisualizarMercado(request):
-	query = DataDB.objects.all()
-	return render(request, 'data/visualizarmercado.html', {'query': query})
+	query1= DataDB.objects.all()
+	return render(request, 'data/visualizarmercado.html', {'query1': query1})

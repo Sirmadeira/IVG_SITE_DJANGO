@@ -4,10 +4,30 @@
 		<thead>
             <th>Marca</th>
             <th>Modelo</th>
+            <th>Ano</th>
+            <th>Status</th>
+            <th>Cor</th>
+            <th>Combustivel</th>
+            <th>Quilometragem</th>
+            <th>Lucro</th>
+            <th>Preco</th>
+            <th>Editar</th>
+            <th>Deletar</th>
+
         </thead>
-		{% for q in query1 %}
+		{% for q in query %}
 		<tr>
-			<td> {{ q }} </td>
+			<td> {{ q.marca }} </td>
+			<td> {{ q.modelo }} </td>
+			<td> {{ q.ano }} </td>
+			<td> {{ q.status }} </td>
+			<td> {{ q.cor }} </td>
+			<td> {{ q.combustivel }} </td>
+			<td> {{ q.quilometragem }} </td>
+			<td> {{ q.lucro }} </td>
+			<td> {{ q.preco }} </td>>
+			<td><a href="{% url 'data-Editar' q.id %}" class="btn btn-primary btn-xs"></a></td>
+			<td><a href="{% url 'data-Deletar' q.id %}" class="btn btn-danger btn-xs"></a></td>
 		</tr>
 		{% endfor %}
 	</table>

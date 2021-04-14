@@ -27,8 +27,9 @@ def VisualizarMercado(request):
 @login_required
 def Update(request, id):  
     query = DataDB.objects.get(id=id)  
-    form = InsiraDadoForm(request.POST, instance = query)  
+    form = InsiraDadosForm(request.POST, instance = query)  
     if form.is_valid():  
+        form.instance.autor = request.user
         form.save()  
         return redirect("data-VisualizarMercado")  
     return render(request, 'data/editar.html', {'query': query}) 

@@ -20,5 +20,5 @@ def InsiraDado(request):
 	return render(request, 'data/insiradado.html', {'form': form})
 
 def VisualizarMercado(request):
-	query1= DataDB.objects.all()
-	return render(request, 'data/visualizarmercado.html', {'query1': query1})
+	query= DataDB.objects.all()
+	return render(request, 'data/visualizarmercado.html', {'query': query})

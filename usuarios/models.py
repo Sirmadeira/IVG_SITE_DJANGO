@@ -1,6 +1,16 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 from PIL import Image
+from django.conf import settings
+
+User= settings.AUTH_USER_MODEL
+
+class CustomUser(AbstractUser):
+	SEXO_CHOICES = (
+        ("R", "Revendedora"),
+        ("C", "Concessionária"),
+    )
+	setor= models.CharField(max_length=1,choices=SEXO_CHOICES, blank=False, null=False)
 
 class EmpresaDB(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)

@@ -1,8 +1,9 @@
 from django.db import models
 from django.utils import timezone
 from django.core.validators import MaxValueValidator, MinValueValidator
-from django.contrib.auth.models import User
+from django.conf import settings
 
+User= settings.AUTH_USER_MODEL
 
 class DataDB(models.Model):
 	marca=models.CharField(max_length = 30, default ="ACURA")

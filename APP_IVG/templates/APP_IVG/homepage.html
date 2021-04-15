@@ -1,21 +1,21 @@
 {% extends "APP_IVG/layout.html" %}
 {% load static %}
 {% block content %}
-<div id="carouselExampleIndicators" class="carousel slide text-center mt-4" style="height: auto; max-height: 900px; width: 100%;" data-ride="carousel">
-  <ol class="carousel-indicators mx-auto my-0 text-center" style="width: 30vw;">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-  </ol>
+<div id="carouselExampleIndicators" class="carousel slide text-center mt-4" style="height: auto; max-height: 900px; width: 100%;" data-bs-ride="carousel">
+  <div class="carousel-indicators mx-auto my-0 text-center" style="width: 30vw;">
+    <button data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+    <button data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+    <button data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+    <button data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"></button>
+    <button data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"></button>
+  </div>
   <div class="carousel-inner">
     <div class="carousel-item active" style="height: auto; max-height: 900px;">
       <img class="d-block w-100" src="{% static 'imagens/Homepage-Slide01.jpg' %}" alt="Primeiro Slide" style="background-size: cover;">
       <div class="carousel-caption d-lg-block text-center my-auto p-1">
         <div class="" style="background-color: black; opacity: .9; margin-bottom: 12vw;">
-    <h5 class="text-truncate" style="color: white; font-size: 3vw; letter-spacing: 4px;">Bem Vindo à IVG</h5>
-    <p style="font-size: 2vw; letter-spacing: 2px; max-width: 100%;">Inteligência de mercado, especializada.</p>
+          <h5 class="text-truncate" style="color: white; font-size: 3vw; letter-spacing: 4px;">Bem Vindo à IVG</h5>
+          <p style="font-size: 2vw; letter-spacing: 2px; max-width: 100%;">Inteligência de mercado, especializada.</p>
         </div>
       </div>
     </div>
@@ -50,14 +50,14 @@
     </div>
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+  <button class="carousel-control-prev" data-bs-target="#carouselExampleIndicators" role="button" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Anterior</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" role="button" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Próximo</span>
-  </a>
+  </button>
 </div>
 <div class="container text-center mt-5 mb-5">
   <div class="row">

@@ -47,7 +47,7 @@ class InsiraDadosForm(forms.ModelForm):
 
 	def clean_status(self, *args, **kwargs):
 		status= self.cleaned_data.get('status')
-		statuses=["Excelente","Bom","Mediano","Ruim","Terrível"]
+		statuses=['Excelente','Bom','Mediano','Ruim','Terrível']
 		if status not in statuses:
 			raise forms.ValidationError(f'Os statuses aceitos são: { statuses }')
 		else:
@@ -55,7 +55,7 @@ class InsiraDadosForm(forms.ModelForm):
 
 	def clean_cor(self, *args, **kwargs):
 		cor= self.cleaned_data.get('cor')
-		cores=["Amarelo","Azul","Bege","Branco","Bronze","Cinza","Dourado","Indefinida","Laranja","Marrom","Prata","Preto","Rosa","Roxo","Verde","Vermelho","Vinho"]
+		cores=['Amarelo','Azul','Bege','Branco','Bronze','Cinza','Dourado','Indefinida','Laranja','Marrom','Prata','Preto','Rosa','Roxo','Verde','Vermelho','Vinho']
 		if cor not in cores:
 			raise forms.ValidationError(f'''Caso a cor não seja aceita e porque ela é muito atípica. 
                         Ou não é constatada no banco de cores.
@@ -74,7 +74,7 @@ class InsiraDadosForm(forms.ModelForm):
 
 	def clean_combustivel(self, *args, **kwargs):
 		combustivel= self.cleaned_data.get('combustivel')
-		combustiveis=["Amarelo","Azul","Bege","Branco","Bronze","Cinza","Dourado","Indefinida","Laranja","Marrom","Prata","Preto","Rosa","Roxo","Verde","Vermelho","Vinho"]
+		combustiveis=['Gasolina','Etanol','GNV','Diesel','Flex']
 		if combustivel not in combustiveis:
 			raise forms.ValidationError(f'Os combustiveis aceitos são: { combustiveis }')
 		else:

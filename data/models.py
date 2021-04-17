@@ -14,6 +14,8 @@ class DataDB(models.Model):
 		validators=[MinValueValidator(1960,'Favor inserir acima 1960.'), MaxValueValidator(2023,'Favor inserir abaixo 2023.')],
 		error_messages={'required':'Favor inserir uma ano'})
 
+	localidade=models.CharField(max_length = 30)
+	
 	status=models.CharField(max_length= 10)
 
 	cor=models.CharField(max_length= 20)

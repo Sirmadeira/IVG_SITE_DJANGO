@@ -60,7 +60,7 @@ class InsiraDadosForm(forms.ModelForm):
 			raise forms.ValidationError(f'''Caso a cor não seja aceita e porque ela é muito atípica. 
                         Ou não é constatada no banco de cores.
                         Favor inserir indefinida no campo nesse caso
-                        As cores aceitas são: { Cores }''')
+                        As cores aceitas são: { cores }''')
 		else:
 			return cor
 

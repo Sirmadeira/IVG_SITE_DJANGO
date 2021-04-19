@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import InsiraDadosForm
@@ -33,3 +34,13 @@ def Destroir(request, id):
     query = DataDB.objects.get(id=id)  
     query.delete()  
     return redirect("data-VisualizarMercado") 
+
+@login_required
+def AutocompleteModelo(request):
+	if 'term' in request.GET:
+		query=DataDB.objects.filter(modelo__istartswith=request.GET.get('term'))
+		modelos=list()
+		for q in query:
+			modelos.append(q.modelo)
+		return JsonResponse(modelos, safe=False)
+	return render(request,'data.insiradado.html')

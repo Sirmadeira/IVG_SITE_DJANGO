@@ -7,7 +7,7 @@ class InsiraDadosForm(forms.ModelForm):
 		model = DataDB
 		widgets = {
 		'marca': forms.TextInput(attrs={'placeholder':'Marca do carro', 'id':'marca'}),
-		'modelo': forms.TextInput(attrs={'placeholder':'Modelo do carro'}),
+		'modelo': forms.TextInput(attrs={'placeholder':'Modelo do carro','id':'modelo'}),
 		'ano': forms.NumberInput(attrs={'placeholder':'Ano do carro'}),
 		'status': forms.TextInput(attrs={'placeholder':'Status do carro'}),
 		'cor': forms.TextInput(attrs={'placeholder':'Cor do carro','id':'cor'}),

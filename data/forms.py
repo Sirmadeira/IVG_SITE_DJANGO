@@ -6,18 +6,17 @@ class InsiraDadosForm(forms.ModelForm):
 	class Meta:
 		model = DataDB
 		widgets = {
-		'marca': forms.TextInput(attrs={'placeholder':'Marca do carro'}),
+		'marca': forms.TextInput(attrs={'placeholder':'Marca do carro', 'id':'marca'}),
 		'modelo': forms.TextInput(attrs={'placeholder':'Modelo do carro'}),
 		'ano': forms.NumberInput(attrs={'placeholder':'Ano do carro'}),
 		'status': forms.TextInput(attrs={'placeholder':'Status do carro'}),
-		'cor': forms.TextInput(attrs={'placeholder':'Cor do carro'}),
-		'lcoalidade': forms.TextInput(attrs={'placeholder':'Local onde a venda foi concretizada'}),
+		'cor': forms.TextInput(attrs={'placeholder':'Cor do carro','id':'cor'}),
+		'localidade': forms.TextInput(attrs={'placeholder':'Local onde a venda foi concretizada'}),
 		'combustivel': forms.TextInput(attrs={'placeholder':'Combutivél do carro'}),
 		'quilometragem': forms.NumberInput(attrs={'placeholder':'Quilometragem do carro'}),
 		'preco': forms.NumberInput(attrs={'placeholder':'Preço final do carro na compra ou venda'}),
 		'lucro': forms.NumberInput(attrs={'placeholder':'Lucro ou prejuízo pós venda do carro, insira 0 caso seja compra'}),
 		}
-
 		fields = ['marca','modelo','ano','status','cor','localidade','combustivel','quilometragem','preco','lucro']
 
 

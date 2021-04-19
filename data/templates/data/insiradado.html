@@ -8,9 +8,47 @@
 				<legend class= "border-bottom mb-4"> Insira seus dados </legend>
 				{{ form|crispy }}
 			</fieldset>
+			<script>
+				  $( function() {
+				    var availableTags = [
+				    'Acura','Agrale','Alfo Romeo','Am Gen','Asia motors','ASTON MARTIN','Audi','Baby','BMW','BRM','BUGRE','Cadillac',
+                    'CBT Jipe','CHANA','CHANGAN','CHERY','Chrysler','Citroën','Cross Lander','Daewoo','Daihatsu',
+                    'Dodge','EFFA','Engesa','Envemo','Ferrari','Fiat','Fibravan','Ford','FOTON','Fyber','GEELY','GM CHEVROLET',
+                    'GREAT WALL','Gurgel','HAFEI','HITECH ELECTRIC','HONDA','HYUNDAY','ISUZU','IVECO','JAC','Jaguar','Jeep','JINBEI','JPX',
+                    'Kia Motors','Lada','Lamborghini','Land Rover','Lexus','LIFAN','LOBINI','Lotus','Mahindra','Maserati','Matra','Mazda',
+                    'Mclaren','Mercedez Benz','Mercury','MG','MINI','Mitsubishi','Miura','Nissan','Peugeot','Plymouth','Pontiac','Porsche',
+                    'RAM','RELY','Renault','Rolls-Royce','Rover','Saab','Saturn','Seat','SHINERAY','smart','SSANGYONG','Subaru','Suzuki',
+                    'TAC','Toyota','Troller','Volvo','VW-VOLKSWAGEN','Wake','Walk'
+				    ];
+				    $( "#marca" ).autocomplete({
+				      source: availableTags
+				    });
+				  } );
+			</script>
+			<script>
+				  $( function() {
+				    var availableTags = [
+				    'Amarelo','Azul','Bege','Branco','Bronze','Cinza','Dourado','Indefinida','Laranja','Marrom','Prata','Preto','Rosa','Roxo','Verde','Vermelho','Vinho'
+				    ];
+				    $( "#cor" ).autocomplete({
+				      source: availableTags
+				    });
+				  } );
+			</script>
 			<div class = "form-group">
 				<button class= "btn btn-outline-info" name= 'submit' type= "submit"> Inserir </button>
 			</div>		
 		</form>
 	</div>
+	
+<style>
+  .ui-autocomplete {
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  * html .ui-autocomplete {
+    height: 200px;
+  }
+</style>
 {% endblock content %}

@@ -37,10 +37,8 @@ def Destroir(request, id):
 
 @login_required
 def AutocompleteModelo(request):
-	if 'term' in request.GET:
-		query=DataDB.objects.filter(modelo__istartswith=request.GET.get('term'))
-		modelos=list()
-		for q in query:
-			modelos.append(q.modelo)
+	term = request.GET.get('term')
+	if term:
+		modelos = list(DataDB.objects.filter(modelo__istartswith=request.GET.get('term')).values_list('modelo', flat=True).order_by("modelo").distinct())
 		return JsonResponse(modelos, safe=False)
 	return render(request,'data.insiradado.html')

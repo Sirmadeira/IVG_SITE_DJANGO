@@ -13,6 +13,14 @@ def InsiraDado(request):
 		if form.is_valid():
 			submitbutton= request.POST.get("submit")
 			form.instance.autor = request.user
+			#Transforma a data de marca modelo e cor em maiusculo
+			marca= form.cleaned_data.get('marca').upper()
+			modelo=form.cleaned_data.get('modelo').upper()
+			cor=form.cleaned_data.get('cor').upper()
+			form.instance.marca= marca
+			form.instance.modelo= modelo
+			form.instance.cor= cor
+			# Formula a margem de lucro
 			preco=form.cleaned_data.get('preco')
 			lucro=form.cleaned_data.get('lucro')
 			form.instance.margem_de_lucro = (lucro/preco)*100

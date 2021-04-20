@@ -10,6 +10,7 @@ class UserCadastroForm(UserCreationForm):
 	class Meta:
 		model = CustomUser
 		fields = ['username', 'email', 'password1','setor', 'password2' ]
+		labels={'username':'Usuário','setor':'Setor da sua empresa'}
 
 class UserUpdateForm(forms.ModelForm):
 	email = forms.EmailField()

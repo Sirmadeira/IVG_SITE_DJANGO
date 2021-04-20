@@ -22,7 +22,7 @@ class DataDB(models.Model):
         ("E", "Etanol"),
         ("G", "GNV"),
         ("D", "Diesel"),
-        ("F", ""),
+        ("F", "Flex"),
     )
 
 	marca=models.CharField(max_length = 30,error_messages={'required':'Favor inserir uma marca'})

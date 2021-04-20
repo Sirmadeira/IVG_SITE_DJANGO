@@ -5,19 +5,18 @@ from .models import DataDB
 class InsiraDadosForm(forms.ModelForm):
 	class Meta:
 		model = DataDB
+		fields = ['marca','modelo','ano','status','cor','localidade','combustivel','quilometragem','preco','lucro']
 		widgets = {
 		'marca': forms.TextInput(attrs={'placeholder':'Marca do carro', 'id':'marca'}),
 		'modelo': forms.TextInput(attrs={'placeholder':'Modelo do carro','id':'modelo'}),
 		'ano': forms.NumberInput(attrs={'placeholder':'Ano do carro'}),
-		'status': forms.TextInput(attrs={'placeholder':'Status do carro'}),
 		'cor': forms.TextInput(attrs={'placeholder':'Cor do carro','id':'cor'}),
-		'localidade': forms.TextInput(attrs={'placeholder':'Local onde a venda foi concretizada'}),
-		'combustivel': forms.TextInput(attrs={'placeholder':'Combutivél do carro'}),
 		'quilometragem': forms.NumberInput(attrs={'placeholder':'Quilometragem do carro'}),
 		'preco': forms.NumberInput(attrs={'placeholder':'Preço final do carro na compra ou venda'}),
 		'lucro': forms.NumberInput(attrs={'placeholder':'Lucro ou prejuízo pós venda do carro, insira 0 caso seja compra'}),
 		}
-		fields = ['marca','modelo','ano','status','cor','localidade','combustivel','quilometragem','preco','lucro']
+		labels= {'combustivel':'Combustível',
+				'localidade':'Local da venda'}
 
 
 	def clean_marca(self, *args, **kwargs):
@@ -44,13 +43,6 @@ class InsiraDadosForm(forms.ModelForm):
 		else:
 			return marca
 
-	def clean_status(self, *args, **kwargs):
-		status= self.cleaned_data.get('status')
-		statuses=['Excelente','Bom','Mediano','Ruim','Terrível']
-		if status not in statuses:
-			raise forms.ValidationError(f'Os statuses aceitos são: { statuses }')
-		else:
-			return status
 
 	def clean_cor(self, *args, **kwargs):
 		cor= self.cleaned_data.get('cor')
@@ -63,21 +55,7 @@ class InsiraDadosForm(forms.ModelForm):
 		else:
 			return cor
 
-	def clean_localidade(self, *args, **kwargs):
-		local= self.cleaned_data.get('localidade')
-		locais=["Limeira","Piracicaba"]
-		if local not in locais:
-			raise forms.ValidationError('Atualmente só trabalhamos com vendas realizadas em Limeira e Piracicaba')
-		else:
-			return local
 
-	def clean_combustivel(self, *args, **kwargs):
-		combustivel= self.cleaned_data.get('combustivel')
-		combustiveis=['Gasolina','Etanol','GNV','Diesel','Flex']
-		if combustivel not in combustiveis:
-			raise forms.ValidationError(f'Os combustiveis aceitos são: { combustiveis }')
-		else:
-			return combustivel
 
 
 	

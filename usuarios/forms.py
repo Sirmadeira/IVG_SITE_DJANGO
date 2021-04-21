@@ -10,7 +10,7 @@ class UserCadastroForm(UserCreationForm):
 	class Meta:
 		model = CustomUser
 		fields = ['username', 'email', 'password1','setor', 'password2' ]
-		labels={'username':'Usuário','setor':'Setor da sua empresa'}
+		labels={'username':'Usuário','setor':'Setor da sua empresa','password1':'Senha','password2':'Confirmar senha'}
 
 class UserUpdateForm(forms.ModelForm):
 	email = forms.EmailField()
@@ -18,8 +18,10 @@ class UserUpdateForm(forms.ModelForm):
 	class Meta:
 		model = CustomUser
 		fields = ['username', 'email']
+		labels = {'username':'Usuário'}
 
 class EmpresaUpdateForm(forms.ModelForm):
 	class Meta:
 		model = EmpresaDB
-		fields = ['image']	
+		fields = ['image']
+		labels={'image': 'Logo da sua empresa'}	

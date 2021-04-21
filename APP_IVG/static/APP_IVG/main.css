@@ -19,50 +19,105 @@ h1, h5, p, ol, span, form{
 
 /*Tags da navbar*/
 .logo{
-  position: relative;
-  height: 200px;
+position: relative;
+height: 200px;
 width: auto;
-margin: -80px auto;
+margin: -80px 10px;
+padding: 0;
 }
 
-.site-header .bg-steel {
-  background: #141414;
-  height: auto;
+.topnav {
+  margin-top: -22px;
+  overflow: hidden;
+  background-color: black;
 }
 
-.site-header .navbar-nav .nav-link .after{
-   margin: 0px 10px 0px 0px;
-   padding: 0;
-}
-div.navbar-nav {
-   margin: auto auto auto auto;
-   height: auto;
-   padding: 0;
-}
-.site-header .navbar-nav .nav-link {
- list-style: none;
+.topnav a {
+  list-style: none;
   text-decoration: none;
   font-size: 14px;
   letter-spacing: 2px;
-  margin: auto 30px;
-  padding: 20px auto;
+  margin: 20px 80px 10px 0;
   text-transform: uppercase;
   outline: 0 none;
-  border-radius: 15px;
+  border-radius: 20px;
   transition-duration: .2s;
   transition-timing-function: linear;
   transition-property: all;
   color: white;
+  float: right;
 }
-.site-header .navbar-nav .nav-link:hover {
+.topnav .menu:hover {
   background-color: rgba(82,168,236,1);
   letter-spacing: 5px;
 }
 text-shadow: 0px 0px 5px rgba(82,168,236,.8);
-}
 .site-header .navbar-nav .nav-link.active {
   font-weight: 500;
 }
+
+/*Tags do hamburguer*/
+#myHamburguer {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+ -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+  background-color: rgba(82,168,236,1);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  background-color: rgba(82,168,236,1);
+}
+
+.topnav a {
+   float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+@media screen and (max-width: 1200px){
+  #myHamburguer {
+    display: block;
+  }
+  a.menu {
+    display: none;
+  }
+
+  .responsive .menu {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  float: none;
+  margin-right: 0;
+  }
+
+  .responsive #home {
+  margin-top: 150px;
+  }
+} 
 
 /*Tags da main*/
 .content-section {

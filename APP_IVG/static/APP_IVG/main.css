@@ -37,7 +37,7 @@ padding: 0;
   text-decoration: none;
   font-size: 14px;
   letter-spacing: 2px;
-  margin: 20px 80px 10px 0;
+  margin: 20px 0px 10px 6vw;
   text-transform: uppercase;
   outline: 0 none;
   border-radius: 20px;
@@ -46,6 +46,7 @@ padding: 0;
   transition-property: all;
   color: white;
   float: right;
+  display: inline-block;
 }
 .topnav .menu:hover {
   background-color: rgba(82,168,236,1);

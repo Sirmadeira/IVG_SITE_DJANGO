@@ -21,8 +21,8 @@
 			<td> {{ q.ano }} </td>
 			<td> {{ q.cor }} </td>
 			<td> {{ q.quilometragem }} </td>
-			<td> {{ q.lucro }} </td>
-			<td> {{ q.preco }} </td>
+			<td> R${{ q.lucro }}</td>
+			<td> R${{ q.preco }} </td>
 			<td> {{ q.margem_de_lucro }}%</td>
 			<td><a href="{% url 'data-Deletar' q.id %}" class="btn btn-danger"></a></td>
 		</tr>

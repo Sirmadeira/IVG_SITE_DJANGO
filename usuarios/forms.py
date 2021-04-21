@@ -9,8 +9,13 @@ class UserCadastroForm(UserCreationForm):
 
 	class Meta:
 		model = CustomUser
-		fields = ['username', 'email', 'password1','setor', 'password2' ]
-		labels={'username':'Usuário','setor':'Setor da sua empresa','password1':'Senha','password2':'Confirmar senha'}
+		fields = ['username', 'email','setor','password1', 'password2' ]
+		labels={'username':'Usuário','setor':'Setor da sua empresa'}
+	# Chatice para alterar label de senha
+	def __init__(self, *args, **kwargs):
+          super().__init__(*args, **kwargs)
+          self.fields['password1'].label = 'Senha'
+          self.fields['password2'].label = 'Confirmar senha'
 
 class UserUpdateForm(forms.ModelForm):
 	email = forms.EmailField()

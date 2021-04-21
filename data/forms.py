@@ -3,6 +3,27 @@ from .models import DataDB
 
 
 class InsiraDadosForm(forms.ModelForm):
+	localidade_escolhas = (
+        ("P", "Piracicaba"),
+        ("L", "Limeira"),
+    )
+	status_escolhas = (
+        ("E", "Excelente"),
+        ("B", "Bom"),
+        ("M", "Mediano"),
+        ("R", "Ruim"),
+        ("T", "Terrível"),
+    )
+	combustivel_escolhas = (
+        ("G", "Gasolina"),
+        ("E", "Etanol"),
+        ("G", "GNV"),
+        ("D", "Diesel"),
+        ("F", "Flex"),
+    )
+	localidade = forms.ChoiceField(choices=localidade_escolhas)
+	status = forms.ChoiceField(choices=status_escolhas)
+	combustivel = forms.ChoiceField(choices=combustivel_escolhas)
 	class Meta:
 		model = DataDB
 		fields = ['marca','modelo','ano','status','cor','localidade','combustivel','quilometragem','preco','lucro']

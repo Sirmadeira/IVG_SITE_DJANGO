@@ -34,6 +34,11 @@ def InsiraDado(request):
 	
 @login_required
 def VisualizarMercado(request):
+	user= request.user
+	contador = DataDB.objects.filter(autor = user).count()
+	faltante = 5-contador
+	if contador < 5 :
+		return render(request, 'data/semdados.html', {'contador' : contador, 'faltante' : faltante})
 	query= DataDB.objects.all()
 	return render(request, 'data/visualizarmercado.html', {'query': query})
 

@@ -33,7 +33,10 @@ urlpatterns = [
     #Essas views estao em minusculo porque django e chato, e nao aceita views de reset com primeira letra maiuscula
      path('password-reset/',
          auth_views.PasswordResetView.as_view(
-             template_name='usuarios/password_reset.html'
+            # Templates para o email de reset de usuarios
+             template_name='usuarios/password_reset.html',
+             email_template_name='usuarios/password_reset_email.html',
+             subject_template_name='usuarios/password_reset_subject.txt'
          ),
          name='password_reset'),
     path('password-reset/done/',

@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from usuarios import views as usuarios_views
+from usuarios.forms import UserLoginForm
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -27,7 +28,7 @@ urlpatterns = [
     #Essas views sao relacionadas o usuario
     path('Cadastro/', usuarios_views.Cadastro, name= 'Cadastro'),
     path('Empresa/', usuarios_views.Empresa, name= 'Empresa'),
-    path('Login/', auth_views.LoginView.as_view(template_name='usuarios/login.html'), name= 'Login'),
+    path('Login/', auth_views.LoginView.as_view(template_name='usuarios/login.html',authentication_form= UserLoginForm), name= 'Login'),
     path('Logout/', auth_views.LogoutView.as_view(template_name='usuarios/logout.html'), name= 'Logout'),
 
     #Essas views estao em minusculo porque django e chato, e nao aceita views de reset com primeira letra maiuscula

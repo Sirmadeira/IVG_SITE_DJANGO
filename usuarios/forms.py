@@ -1,8 +1,16 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from .models import CustomUser,EmpresaDB
 
 
+#Mecanicas chatas para alterar valor natural dos forms
+
+class UserLoginForm(AuthenticationForm):
+    def __init__(self, *args, **kwargs):
+        super(UserLoginForm, self).__init__(*args, **kwargs)
+
+    username = forms.CharField(label='Usuário',widget=forms.TextInput())
+    password = forms.CharField(label='Senha',widget=forms.PasswordInput())
 
 class UserCadastroForm(UserCreationForm):
 	email = forms.EmailField()

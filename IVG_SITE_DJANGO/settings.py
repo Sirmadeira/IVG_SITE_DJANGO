@@ -34,7 +34,8 @@ INSTALLED_APPS = [
     'APP_IVG.apps.AppIvgConfig',
     'usuarios.apps.UsuariosConfig',
     'data.apps.DataConfig',
-    'crispy_forms', 
+    'crispy_forms',
+    'crispy_bootstrap5', 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -125,6 +126,8 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS='bootstrap5' 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5' 
 

@@ -201,6 +201,8 @@ div.content-section{
   width: 40%;
   min-width: 400px; 
   margin: 50px auto;
+  height: auto;
+  color: black;
 }
 
 /*Tags do FAQ*/

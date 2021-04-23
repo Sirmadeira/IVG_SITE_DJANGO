@@ -196,8 +196,11 @@ width: 100%;
 }
 
 /*Form control todos*/
-.form-control-lg{
-  font-size: 12px;
+div.content-section{
+  font-size: 14px;
+  width: 40%;
+  min-width: 400px; 
+  margin: 50px auto;
 }
 
 /*Tags do FAQ*/

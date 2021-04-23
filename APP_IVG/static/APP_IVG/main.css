@@ -1,33 +1,126 @@
-body {
-  background: #fafafa;
-  color: #333333;
-  margin-top: 5rem;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: #444444;
-}
-
-ul {
+* {
   margin: 0;
+  padding: 0;
 }
 
-.bg-steel {
-  background-color: #5f788a;
+body {
+  background-color: #141414;
+  color: white;
+  margin: 0;
+  animation: Transição 50ms;
 }
 
-.site-header .navbar-nav .nav-link {
-  color: #cbd5db;
+/*Animacao para entrada de janela */
+h1, h5, p, ol, span, form{
+   animation: TransiçãoY 600ms;
 }
 
-.site-header .navbar-nav .nav-link:hover {
-  color: #ffffff;
+/*Tags da navbar*/
+.logo{
+position: relative;
+height: 200px;
+width: auto;
+margin: -80px 10px;
+padding: 0;
 }
 
+.topnav {
+  margin-top: -22px;
+  overflow: hidden;
+  background-color: black;
+}
+
+.topnav a {
+  list-style: none;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin: 20px 0px 10px 6vw;
+  text-transform: uppercase;
+  outline: 0 none;
+  border-radius: 20px;
+  transition-duration: .2s;
+  transition-timing-function: linear;
+  transition-property: all;
+  color: white;
+  float: right;
+  display: inline-block;
+}
+
+.topnav .menu:hover {
+  background-color: rgba(82,168,236,1);
+  letter-spacing: 5px;
+}
+
+text-shadow: 0px 0px 5px rgba(82,168,236,.8);
 .site-header .navbar-nav .nav-link.active {
   font-weight: 500;
 }
 
+/*Tags do hamburguer*/
+#myHamburguer {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+ -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+  background-color: rgba(82,168,236,1);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  background-color: rgba(82,168,236,1);
+}
+
+.topnav a {
+   float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+@media screen and (max-width: 1200px){
+  #myHamburguer {
+    display: block;
+  }
+  a.menu {
+    display: none;
+  }
+
+  .responsive .menu {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  float: none;
+  margin-right: 0;
+  }
+
+  .responsive #home {
+  margin-top: 150px;
+  }
+}
+
+/*Tags da main*/
 .content-section {
   background: #ffffff;
   padding: 10px 20px;
@@ -36,49 +129,105 @@ ul {
   margin-bottom: 20px;
 }
 
-.article-title {
-  color: #444444;
-}
-
-a.article-title:hover {
-  color: #428bca;
-  text-decoration: none;
-}
-
-.article-content {
-  white-space: pre-line;
-}
-
-.article-img {
-  height: 65px;
-  width: 65px;
-  margin-right: 16px;
-}
-
-.article-metadata {
-  padding-bottom: 1px;
-  margin-bottom: 4px;
-  border-bottom: 1px solid #e3e3e3
-}
-
-.article-metadata a:hover {
-  color: #333;
-  text-decoration: none;
-}
-
-.article-svg {
-  width: 25px;
-  height: 25px;
-  vertical-align: middle;
-}
-
-.account-img {
-  height: 125px;
-  width: 125px;
-  margin-right: 20px;
-  margin-bottom: 16px;
-}
-
 .account-heading {
   font-size: 2.5rem;
 }
+
+main{
+  padding: 0px;
+  margin: 500px 0 0 0;
+}
+.no-gutters{
+  margin-right: 0px;
+  margin-left: 0;
+}
+.col{
+    padding-right: 0;
+    padding-left: 0;
+    margin: auto;
+}
+footer{
+margin: 0;
+padding: 10% 0;
+width: 100%;
+}
+
+/*Tags da homepage*/
+.redesocial{
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 5px;
+  height: 70px;
+  width: auto;
+}
+.redesocial2{
+  margin-top: 15px;
+  margin-right: 10px;
+  padding: 5px;
+  height: 61px;
+  width: auto;
+}
+.carousel{
+  margin: -50px 0 0px;
+}
+.carousel-caption{
+  margin: 0px 0;
+  padding: 0px;
+  color: white;
+}
+.icone{
+  height: 100px;
+  margin: 30px 50px;
+  width: auto;
+}
+.icone2{
+ height: 100px;
+ margin: 30px 60px;
+ width: auto; 
+}
+.icone3{
+ height: 80px;
+ margin: 40px 60px;
+ width: auto; 
+}
+.col{
+  margin: 0;
+  padding: 0;
+}
+
+/*Form control todos*/
+.form-control-lg{
+  font-size: 12px;
+}
+
+/*Tags do FAQ*/
+.accordion-button:not(.collapsed) {
+  color: #0c63e4;
+  background-color: #74A4F7;
+}
+
+.accordion-button .arrow {
+  position: relative;
+  color: black;
+  border-size: 1rem;
+  border-left: 1rem;
+  border-bottom: 1rem;
+  height: 1rem;
+  width: 1rem;
+  transform: rotate(135deg);
+}
+
+/* O codigo de animacao */
+@keyframes TransiçãoY {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0px);}
+}
+
+@keyframes Transição {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@media and (min-width: 700.98px){
+.container .row{
+margin: 200px;

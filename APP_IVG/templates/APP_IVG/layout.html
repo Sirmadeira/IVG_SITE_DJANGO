@@ -28,8 +28,8 @@
 </head>
 <body>
   <!-- Navbar -->
-	  <header>
-          <div class="topnav" id="myTopnav">
+	  <header id= 'myHeader'>
+          <div class="topnav fixed-top" id="myTopnav">
               <a href="{% url 'APP_IVG-Homepage' %}"><img class="logo" src="{% static 'imagens/Logo-IVG-azulclaro.png' %}"></a>
               <a class="menu" id="home" aria-current="page" href="{% url 'APP_IVG-Homepage' %}">Home</a>
               <a class="menu" href="{% url 'APP_IVG-Sobre' %}">Sobre</a>
@@ -51,7 +51,7 @@
           </div>
     </header>
     <!-- Final de navbar -->
-    <main role="main" class="container-fluid p-0 mt-4">
+    <main id="main" role="main" class="container-fluid p-0 mx-0" style="margin-top: 165px;">
 	   <div class="col-md mx-auto mt-0 p-0">
       {% if messages %}
         {% for message in messages %}
@@ -106,17 +106,28 @@
           </div>      
     </footer>
     <script type="">
-      function myFunction() {
-        var x = document.getElementById("myTopnav");
-        var y = document.getElementById("myHamburguer");
+      var x = document.getElementById("myTopnav");
+      var y = document.getElementById("myHamburguer");
 
+      function myFunction() {
         if (y.className === "hamburguer") {
           y.className += " change";
           x.className += " responsive";
         }
         else {
           y.className = "hamburguer";
-          x.className = "topnav";
+          x.className = "topnav fixed-top";
+        }
+      }
+      document.getElementById("myTopnav").addEventListener("scroll", efeitoScroll);
+
+      function efeitoScroll() {
+        var x = document.getElementById("myTopnav");
+        var stick = x.offsetTop;
+        if (window.pageYOffset > stick) {
+          x.classList.add("stick");
+        } else {
+          x.classList.remove("stick");
         }
       }
     </script> 

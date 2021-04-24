@@ -27,15 +27,15 @@ class DataDB(models.Model):
 		validators=[MinValueValidator(0,'Não existe quilometragem negativa'),MaxValueValidator(99999999,'Favor inserir valor menor')],
 		error_messages={'required':'Favor inserir a quilometragem','max_digits':'Favor inserir uma kilometragem menor.','decimal_places':'Favor so por 2 casas decimais.'})
 
-	lucro=models.DecimalField(max_digits= 10,decimal_places=2,max_length= 12,
+	lucro=models.DecimalField(max_digits= 12,decimal_places=2,max_length= 12,
 		validators=[MaxValueValidator(99999999,'Favor inserir valor menor')],
 		error_messages={'required':'Favor inserir o lucro','max_digits':'Favor inserir um lucro menor.','decimal_places':'Favor so por 2 casas decimais.'})
 
-	preco=models.DecimalField(max_digits= 10,decimal_places=2,max_length= 12,
+	preco=models.DecimalField(max_digits= 12,decimal_places=2,max_length= 12,
 		validators=[MinValueValidator(1000.00,'Favor inserir vendas acima de 1000 reais'),MaxValueValidator(99999999,'Favor inserir valor menor')],
 		error_messages={'required':'Favor inserir o lucro','max_digits':'Favor inserir um lucro menor.','decimal_places':'Favor so por 2 casas decimais.'})
 
-	margem_de_lucro=models.DecimalField(max_digits= 10,decimal_places=3,max_length= 12)
+	margem_de_lucro=models.DecimalField(max_digits= 12,decimal_places=3,max_length= 12)
 
 	data_postada = models.DateTimeField(default=timezone.now)
 

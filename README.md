@@ -4,4 +4,5 @@ Framework mais escalonavél e melhor data related models
 
 # Tarefa inicial
 Estou montando todas as diretrizes necessarias para melhorar a framework, e torna-la capaz de transferir certas mecanicas flask. 
-A mecanica de formulario de inserir dados foi inserida com sucesso, proxima tarefa sera exibir a database base
+A mecanica de formulario de inserir dados foi inserida com sucesso, proxima tarefa sera exibir a database base,
+a mecanica crud foi encerrada com sucesso, alterando pequenos detalhes nos formularios nao truduzidos.

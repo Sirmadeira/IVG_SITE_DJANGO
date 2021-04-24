@@ -6,6 +6,7 @@ from django.conf import settings
 User= settings.AUTH_USER_MODEL
 
 class CustomUser(AbstractUser):
+	email = models.EmailField(unique=True)
 	setor_escolhas = (
         ("R", "Revendedora"),
         ("C", "Concessionária"),

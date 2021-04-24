@@ -3,22 +3,33 @@ from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from .models import CustomUser,EmpresaDB
 
 
-#Mecanicas chatas para alterar valor natural dos forms
+#Mecanicas chatas para alterar validators labels etc de criacao de usuario
 
 class UserLoginForm(AuthenticationForm):
-    def __init__(self, *args, **kwargs):
-        super(UserLoginForm, self).__init__(*args, **kwargs)
-
     username = forms.CharField(label='Usuário',widget=forms.TextInput())
     password = forms.CharField(label='Senha',widget=forms.PasswordInput())
+    def __init__(self, *args, **kwargs):
+        super(UserLoginForm, self).__init__(*args, **kwargs)
+        self.error_messages['invalid_login'] = 'Usuário ou senha inválido'
+        super().__init__(*args, **kwargs)
+
 
 class UserCadastroForm(UserCreationForm):
-	email = forms.EmailField()
-
+	error_messages = {
+        'password_mismatch': "Essas senhas não são iguais",
+    }
 	class Meta:
 		model = CustomUser
 		fields = ['username', 'email','setor','password1', 'password2' ]
 		labels={'username':'Usuário','setor':'Setor da sua empresa'}
+		error_messages= {
+			'username': {
+			'unique': 'Esse usuário já existe'
+			},
+			'email':{
+			'unique':'Esse email já está cadastrado'
+			}
+		}
 	# Chatice para alterar label de senha
 	def __init__(self, *args, **kwargs):
           super().__init__(*args, **kwargs)

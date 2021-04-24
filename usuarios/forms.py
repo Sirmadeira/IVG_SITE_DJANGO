@@ -30,11 +30,16 @@ class UserCadastroForm(UserCreationForm):
 			'unique':'Esse email já está cadastrado'
 			}
 		}
+		help_texts={'username':'Favor evitar uso de carateres especiais, algo além desses @/./+/-/_ não será aceito'}
 	# Chatice para alterar label de senha
 	def __init__(self, *args, **kwargs):
           super().__init__(*args, **kwargs)
           self.fields['password1'].label = 'Senha'
           self.fields['password2'].label = 'Confirmar senha'
+          self.fields['password1'].help_text='''* Sua senha precisa ter 8 caracteres
+												* Sua senha não pode ser muito comum
+												* Sua senha não pode ser só números'''
+          self.fields['password2'].help_text='Favor por a mesma senha neste campo'
 
 class UserUpdateForm(forms.ModelForm):
 	email = forms.EmailField()

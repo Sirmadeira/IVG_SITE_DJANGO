@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm,AuthenticationForm, SetPasswordForm
 from .models import CustomUser,EmpresaDB
 
 
@@ -13,10 +13,10 @@ class UserLoginForm(AuthenticationForm):
         self.error_messages['invalid_login'] = 'Usuário ou senha inválido'
         super().__init__(*args, **kwargs)
 
-
 class UserCadastroForm(UserCreationForm):
 	error_messages = {
         'password_mismatch': "Essas senhas não são iguais",
+        'password_notvalid':'Senha precisa conter 8 caracteres',
     }
 	class Meta:
 		model = CustomUser
@@ -40,6 +40,22 @@ class UserCadastroForm(UserCreationForm):
 												* Sua senha não pode ser muito comum
 												* Sua senha não pode ser só números'''
           self.fields['password2'].help_text='Favor por a mesma senha neste campo'
+
+# Classe feita para customizar form de reset de senha
+class CustomResetForm(SetPasswordForm):
+	error_messages = {
+        'password_mismatch': "Essas senhas não são iguais",
+        'password_notvalid':'Senha precisa conter 8 caracteres',
+    }
+	new_password1 = forms.CharField(label=("Nova senha"),
+		widget=forms.PasswordInput(attrs={'placeholder': 'Insira nova senha', 'class': 'password1'}),
+        strip=False,
+		)
+	new_password2 = forms.CharField(
+		label=("Confirme nova senha"),
+        strip=False,
+        widget=forms.PasswordInput(attrs={'placeholder': 'Repita sua senha', 'class': 'password2'}),
+        )
 
 class UserUpdateForm(forms.ModelForm):
 	email = forms.EmailField()

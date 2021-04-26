@@ -43,6 +43,14 @@
 			        });
 			    });
 			</script>
+			<script>
+			    $(function () {
+			        $("#motor").autocomplete({
+			            source: '{% url 'data-AutocompleteMotor' %}',
+			            minLength: 1
+			        });
+			    });
+			</script>
 			<div class = "form-group">
 				<button class= "btn btn-outline-info" name= 'submit' type= "submit"> Inserir </button>
 			</div>		

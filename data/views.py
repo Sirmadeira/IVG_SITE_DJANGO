@@ -55,3 +55,11 @@ def AutocompleteModelo(request):
 		modelos = list(DataDB.objects.filter(modelo__istartswith=request.GET.get('term')).values_list('modelo', flat=True).order_by("modelo").distinct())
 		return JsonResponse(modelos, safe=False)
 	return render(request,'data.insiradado.html')
+
+@login_required
+def AutocompleteMotor(request):
+	term = request.GET.get('term')
+	if term:
+		motores = list(DataDB.objects.filter(motor__istartswith=request.GET.get('term')).values_list('motor', flat=True).order_by("motor").distinct())
+		return JsonResponse(motores, safe=False)
+	return render(request,'data.insiradado.html')

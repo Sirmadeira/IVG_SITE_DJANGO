@@ -11,6 +11,8 @@ class DataDB(models.Model):
 
 	modelo=models.CharField(max_length = 60,error_messages={'required':'Favor inserir um modelo'})
 
+	motor=models.CharField(max_length = 60,error_messages={'required':'Favor inserir um motor'})
+
 	ano=models.IntegerField(
 		validators=[MinValueValidator(1960,'Favor inserir acima 1960.'), MaxValueValidator(2023,'Favor inserir abaixo 2023.')],
 		error_messages={'required':'Favor inserir uma ano'})

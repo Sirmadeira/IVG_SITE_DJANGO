@@ -26,10 +26,11 @@ class InsiraDadosForm(forms.ModelForm):
 	combustivel = forms.ChoiceField(choices=combustivel_escolhas)
 	class Meta:
 		model = DataDB
-		fields = ['marca','modelo','ano','status','cor','localidade','combustivel','quilometragem','preco','lucro']
+		fields = ['marca','modelo','motor','ano','status','cor','localidade','combustivel','quilometragem','preco','lucro']
 		widgets = {
 		'marca': forms.TextInput(attrs={'placeholder':'Marca do carro', 'id':'marca'}),
 		'modelo': forms.TextInput(attrs={'placeholder':'Modelo do carro','id':'modelo'}),
+		'motor': forms.TextInput(attrs={'placeholder':'Motor do carro','id':'motor'}),
 		'ano': forms.NumberInput(attrs={'placeholder':'Ano do carro'}),
 		'cor': forms.TextInput(attrs={'placeholder':'Cor do carro','id':'cor'}),
 		'quilometragem': forms.NumberInput(attrs={'placeholder':'Quilometragem do carro'}),

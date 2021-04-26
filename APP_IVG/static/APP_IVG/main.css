@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  font-weight: normal;
+
 }
 
 body {
@@ -17,27 +19,37 @@ h1, h5, p, ol, span, form{
 
 /*Tags da navbar*/
 .logo{
-position: relative;
+position: absolute;
+top: -45px;
+left: 0;
 height: 200px;
 width: auto;
-margin: -80px 0px -70px 0;
-padding: 0;
+
+}
+
+.stickyLogo {
+top: -60px;
+transition: .5s;
 }
 
 .topnav {
-  margin-top: -22px;
   background-color: black;
   top: 0px;
   left: 0px;
   width: 100%;
-}
+  transition: .5s;
+  padding: 25px 0 40px 140px;
+
+
+
+  }
 
 .topnav a {
   list-style: none;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 3vw;
   letter-spacing: 2px;
-  margin: 50px 0px 10px 1vw;
+  margin: 10px 0px 0px 1vw;
   text-transform: uppercase;
   outline: 0 none;
   border-radius: 20px;
@@ -53,11 +65,22 @@ padding: 0;
   background-color: rgba(82,168,236,1);
   letter-spacing: 5px;
 }
-
+/*Sombra de quando usuario passa por cima*/
 text-shadow: 0px 0px 5px rgba(82,168,236,.8);
 .site-header .navbar-nav .nav-link.active {
   font-weight: 500;
 }
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  transition: .5s;
+  color: black;
+  padding: 14px 0 15px 140px;
+ }
 
 /*Tags do hamburguer*/
 #myHamburguer {
@@ -65,7 +88,8 @@ text-shadow: 0px 0px 5px rgba(82,168,236,.8);
   cursor: pointer;
   position: absolute;
   right: 0;
-  top: -10px;
+  top: 0;
+  padding-bottom: 50px;
 }
 
 .bar1, .bar2, .bar3 {

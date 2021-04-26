@@ -30,28 +30,28 @@
   <!-- Navbar -->
 	  <header id= 'myHeader'>
           <div class="topnav fixed-top" id="myTopnav">
-              <a href="{% url 'APP_IVG-Homepage' %}"><img class="logo" src="{% static 'imagens/Logo-IVG-azulclaro.png' %}"></a>
+              <a href="{% url 'APP_IVG-Homepage' %}"><img class="logo" id="logo" src="{% static 'imagens/Logo-IVG-azulclaro.png' %}"></a>
               <a class="menu" id="home" aria-current="page" href="{% url 'APP_IVG-Homepage' %}">Home</a>
-              <a class="menu" href="{% url 'APP_IVG-Sobre' %}">Sobre</a>
-              <a class="menu" href="{% url 'APP_IVG-Faq' %}">Faq</a>
+              <a class="menu" id="sobre" href="{% url 'APP_IVG-Sobre' %}">Sobre</a>
+              <a class="menu" id="faq" href="{% url 'APP_IVG-Faq' %}">Faq</a>
               {% if user.is_authenticated %}
-                <a class="menu" href="{% url 'data-VisualizarMercado' %}">Dados de mercado</a>
-                <a class="menu" href="{% url 'data-InsiraDado' %}">Inserir dados</a>
-                <a class="menu" href="{% url 'Empresa' %}">Sua empresa</a>
-                <a class="menu" href="{% url 'Logout' %}">Logout</a>
+                <a class="menu" id="dadosDeMercado" href="{% url 'data-VisualizarMercado' %}">Dados de mercado</a>
+                <a class="menu" id="inserirDados" href="{% url 'data-InsiraDado' %}">Inserir dados</a>
+                <a class="menu" id="suaEmpresa" href="{% url 'Empresa' %}">Sua empresa</a>
+                <a class="menu" id="logout"  href="{% url 'Logout' %}">Logout</a>
               {% else %}
-                <a class="menu" href="{% url 'Login' %}">Login</a>
-                <a class="menu" href="{% url 'Cadastro' %}">Register</a>
+                <a class="menu" id="login" href="{% url 'Login' %}">Login</a>
+                <a class="menu" id="register" href="{% url 'Cadastro' %}">Register</a>
               {% endif %}
               <a id="myHamburguer" class="hamburguer" onclick="myFunction()">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
+                <div class="bar1" id="bar1"></div>
+                <div class="bar2" id="bar2"></div>
+                <div class="bar3" id="bar3"></div>
               </a>
           </div>
     </header>
     <!-- Final de navbar -->
-    <main id="main" role="main" class="container-fluid p-0 mx-0" style="margin-top: 165px;">
+    <main id="main" role="main" class="container-fluid p-0 mx-0" style="margin-top: 140px;">
 	   <div class="col-md mx-auto mt-0 p-0">
       {% if messages %}
         {% for message in messages %}
@@ -108,26 +108,64 @@
     <script type="">
       var x = document.getElementById("myTopnav");
       var y = document.getElementById("myHamburguer");
-
+      var logo = document.getElementById("logo");
+      var home = document.getElementById("home");
+      var sobre = document.getElementById("sobre");
+      var faq = document.getElementById("faq");
+      var dadosDeMercado = document.getElementById("dadosDeMercado");
+      var inserirDados = document.getElementById("inserirDados");
+      var suaEmpresa = document.getElementById("suaEmpresa");
+      var logout = document.getElementById("logout");
+      var login = document.getElementById("login");
+      var register = document.getElementById("register");
+      var bar1 = document.getElementById("bar1");
+      var bar2 = document.getElementById("bar2");
+      var bar3 = document.getElementById("bar3");
+      /* Responsividade do hamburguer*/
       function myFunction() {
         if (y.className === "hamburguer") {
-          y.className += " change";
-          x.className += " responsive";
+          y.classList.add("change");
+          x.classList.add("responsive");
         }
         else {
-          y.className = "hamburguer";
-          x.className = "topnav fixed-top";
+          y.classList.remove("change");
+          x.classList.remove("responsive");
         }
       }
-      document.getElementById("myTopnav").addEventListener("scroll", efeitoScroll);
+      window.onscroll = function() {scroll()};
+      var sticky = x.offsetTop;
+      function scroll() {
+        if (window.pageYOffset > sticky) {
+          x.classList.add("sticky");
+          bar1.classList.add("bg-dark");
+          bar2.classList.add("bg-dark");
+          bar3.classList.add("bg-dark");
+          logo.classList.add("stickyLogo");
+          home.classList.add("text-dark");
+          sobre.classList.add("text-dark");
+          faq.classList.add("text-dark"); 
+          dadosDeMercado.classList.add("text-dark");
+          inserirDados.classList.add("text-dark"); 
+          suaEmpresa.classList.add("text-dark");
+          logout.classList.add("text-dark");
+          login.classList.add("text-dark");
+          register.classList.add("text-dark"); 
 
-      function efeitoScroll() {
-        var x = document.getElementById("myTopnav");
-        var stick = x.offsetTop;
-        if (window.pageYOffset > stick) {
-          x.classList.add("stick");
         } else {
-          x.classList.remove("stick");
+          x.classList.remove("sticky");
+          bar1.classList.remove("bg-dark");
+          bar2.classList.remove("bg-dark");
+          bar3.classList.remove("bg-dark");
+          logo.classList.remove("stickyLogo");
+          home.classList.remove("text-dark");
+          sobre.classList.remove("text-dark");
+          faq.classList.remove("text-dark"); 
+          dadosDeMercado.classList.remove("text-dark");
+          inserirDados.classList.remove("text-dark"); 
+          suaEmpresa.classList.remove("text-dark");
+          logout.classList.remove("text-dark");
+          login.classList.remove("text-dark");
+          register.classList.remove("text-dark"); 
         }
       }
     </script> 

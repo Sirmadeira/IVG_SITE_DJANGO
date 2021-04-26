@@ -16,9 +16,11 @@ def InsiraDado(request):
 			#Transforma a data de marca modelo e cor em maiusculo
 			marca= form.cleaned_data.get('marca').upper()
 			modelo=form.cleaned_data.get('modelo').upper()
+			motor=form.cleaned_data.get('motor').upper()
 			cor=form.cleaned_data.get('cor').upper()
 			form.instance.marca= marca
 			form.instance.modelo= modelo
+			motor=form.cleaned_data.get('motor').upper()
 			form.instance.cor= cor
 			# Formula a margem de lucro
 			preco=form.cleaned_data.get('preco')

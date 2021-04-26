@@ -44,16 +44,13 @@ class DataDB(models.Model):
 	combustivel=models.CharField(choices=combustivel_escolhas,max_length = 1,blank=False, null=False)
 
 	quilometragem=models.DecimalField(max_digits= 10,decimal_places=2,max_length= 12,
-		validators=[MinValueValidator(0,'Não existe quilometragem negativa'),MaxValueValidator(99999999,'Favor inserir valor menor')],
-		error_messages={'required':'Favor inserir a quilometragem','max_digits':'Favor inserir uma kilometragem menor.','decimal_places':'Favor so por 2 casas decimais.'})
+		validators=[MinValueValidator(0,'Não existe quilometragem negativa'),MaxValueValidator(99999999,'Favor inserir valor menor')])
 
 	lucro=models.DecimalField(max_digits= 12,decimal_places=2,max_length= 12,
-		validators=[MaxValueValidator(99999999,'Favor inserir valor menor')],
-		error_messages={'required':'Favor inserir o lucro','max_digits':'Favor inserir um lucro menor.','decimal_places':'Favor so por 2 casas decimais.'})
+		validators=[MaxValueValidator(99999999,'Favor inserir valor menor')])
 
 	preco=models.DecimalField(max_digits= 12,decimal_places=2,max_length= 12,
-		validators=[MinValueValidator(1000.00,'Favor inserir vendas acima de 1000 reais'),MaxValueValidator(99999999,'Favor inserir valor menor')],
-		error_messages={'required':'Favor inserir o lucro','max_digits':'Favor inserir um lucro menor.','decimal_places':'Favor so por 2 casas decimais.'})
+		validators=[MinValueValidator(1000.00,'Favor inserir vendas acima de 1000 reais'),MaxValueValidator(99999999,'Favor inserir valor menor')])
 
 	margem_de_lucro=models.DecimalField(max_digits= 12,decimal_places=3,max_length= 12)
 

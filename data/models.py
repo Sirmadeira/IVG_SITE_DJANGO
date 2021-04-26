@@ -6,6 +6,24 @@ from django.conf import settings
 User= settings.AUTH_USER_MODEL
 
 class DataDB(models.Model):
+	localidade_escolhas = (
+        ("P", "Piracicaba"),
+        ("L", "Limeira"),
+    )
+	status_escolhas = (
+        ("E", "Excelente"),
+        ("B", "Bom"),
+        ("M", "Mediano"),
+        ("R", "Ruim"),
+        ("T", "Terrível"),
+    )
+	combustivel_escolhas = (
+        ("G", "Gasolina"),
+        ("E", "Etanol"),
+        ("G", "GNV"),
+        ("D", "Diesel"),
+        ("F", "Flex"),
+    )
 	
 	marca=models.CharField(max_length = 30,error_messages={'required':'Favor inserir uma marca'})
 
@@ -17,13 +35,13 @@ class DataDB(models.Model):
 		validators=[MinValueValidator(1960,'Favor inserir acima 1960.'), MaxValueValidator(2023,'Favor inserir abaixo 2023.')],
 		error_messages={'required':'Favor inserir uma ano'})
 
-	localidade=models.CharField(max_length = 1,blank=False, null=False)
+	localidade=models.CharField(choices=localidade_escolhas,max_length = 1,blank=False, null=False)
 	
-	status=models.CharField(max_length = 1,blank=False, null=False)
+	status=models.CharField(choices=status_escolhas,max_length = 1,blank=False, null=False)
 
 	cor=models.CharField(max_length= 20)
 
-	combustivel=models.CharField(max_length = 1,blank=False, null=False)
+	combustivel=models.CharField(choices=combustivel_escolhas,max_length = 1,blank=False, null=False)
 
 	quilometragem=models.DecimalField(max_digits= 10,decimal_places=2,max_length= 12,
 		validators=[MinValueValidator(0,'Não existe quilometragem negativa'),MaxValueValidator(99999999,'Favor inserir valor menor')],

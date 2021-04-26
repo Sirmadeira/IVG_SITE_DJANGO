@@ -5,8 +5,12 @@
 		<thead>
             <th>Marca</th>
             <th>Modelo</th>
+            <th>Motor</th>
             <th>Ano</th>
+            <th>Status</th>
             <th>Cor</th>
+            <th>Localidade</th>
+            <th>Combustivel</th>
             <th>Quilometragem</th>
             <th>Lucro</th>
             <th>Preco</th>
@@ -18,8 +22,12 @@
 		<tr>
 			<td> {{ q.marca }} </td>
 			<td> {{ q.modelo }} </td>
+			<td> {{ q.motor }} </td>
 			<td> {{ q.ano }} </td>
+			<td> {{ q.get_status_display }} </td>
 			<td> {{ q.cor }} </td>
+			<td> {{ q.get_localidade_display }} </td>
+			<td> {{ q.get_combustivel_display }} </td>
 			<td> {{ q.quilometragem }} </td>
 			<td> R${{ q.lucro }}</td>
 			<td> R${{ q.preco }} </td>

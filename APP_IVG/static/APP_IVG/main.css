@@ -260,19 +260,15 @@ div.content-section{
   transition: .4s;
 }
 
-.accordion:after {
-  content: ""
+.bi {
   font-size: 25px;
   color: #777;
   float: right;
-  margin-left: 5px;
   transition: .2s ease-out;
-  transform: rotate(90deg);
 }
 
-.active:after {
-  content: ""; /* Unicode character for "minus" sign (-) */
-  transform: rotate(270deg);
+.active .bi {
+  transform: rotate(180deg);
   margin-right: 5px;
 
 }

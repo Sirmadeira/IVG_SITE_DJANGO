@@ -44,11 +44,24 @@ def VisualizarMercado(request):
 	query= DataDB.objects.all()
 	return render(request, 'data/visualizarmercado.html', {'query': query})
 
+@login_required	
+def Update(request, pk):
+	dado = DataDB.objects.get(id=pk)
+	form = InsiraDadosForm(instance=dado)
+	if request.method == 'POST':
+		form = InsiraDadosForm(request.POST, instance=dado)
+		if form.is_valid():
+			form.save()
+			messages.success(request, f'Seus dados foram atualizados com sucesso!')
+			return redirect('data-VisualizarMercado')
+	context = {'form':form}
+	return render(request, 'data/insiradado.html', context)
+
 @login_required
-def Destroir(request, id):  
-    query = DataDB.objects.get(id=id)  
+def Destroir(request, pk):  
+    query = DataDB.objects.get(id=pk)  
     query.delete()  
-    return redirect("data-VisualizarMercado") 
+    return redirect("data-VisualizarMercado")  
 
 @login_required
 def AutocompleteModelo(request):

@@ -1,5 +1,18 @@
 {% extends "APP_IVG/layout.html" %}
 {% load static %}
 {% block content %}
-	<h1>Faq template</h1>
+<div id="accordion" class="container-fluid" style=" background-image: url({% static 'imagens/Faq-Background.jpg' %}); background-size: cover; height: auto; margin: -50px 0 0 0; padding: 10%; width: 100%; ">
+<button class="accordion">A IVG faz relatórios para outros setores? <i class="bi bi-chevron-down"></i></i></button>
+<div class="panel">
+ 	<p>No momento trabalhamos apenas com revendedoras de carros, devido a seus trabalhos de vendas e revendas.</p>
+</div>
+<button class="accordion">O serviço é pago?</button>
+<div class="panel">
+	<p>Para os contribuintes iniciais, o serviço tem um desconto considerável. Mas, enquanto alimentamos a database, o serviço é gratuito.</p>
+</div>
+<button class="accordion">Se eu tiver um grande número de contribuição de dados, eu ganho algo em troca?</button>
+<div class="panel">
+	<p>Sim, você ganhará desconto nos futuros planos mensais e associação opinativa, que confere mais prioridade à sua opinião na formação dos novos gráficos.</p>
+</div>
+</div>
 {% endblock content %}

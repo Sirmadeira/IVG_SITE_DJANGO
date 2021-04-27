@@ -225,24 +225,56 @@ div.content-section{
   min-width: 400px; 
   margin: 50px auto;
   height: auto;
-  color: black;
+  color: white;
 }
 
 /*Tags do FAQ*/
-.accordion-button:not(.collapsed) {
-  color: #0c63e4;
-  background-color: #74A4F7;
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
 }
 
-.accordion-button .arrow {
-  position: relative;
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  overflow-wrap: break-word;
   color: black;
-  border-size: 1rem;
-  border-left: 1rem;
-  border-bottom: 1rem;
-  height: 1rem;
-  width: 1rem;
-  transform: rotate(135deg);
+  letter-spacing: 1px;
+  font-size: 14px;
+  transition: .4s;
+}
+
+.accordion:after {
+  content: ""
+  font-size: 25px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+  transition: .2s ease-out;
+  transform: rotate(90deg);
+}
+
+.active:after {
+  content: ""; /* Unicode character for "minus" sign (-) */
+  transform: rotate(270deg);
+  margin-right: 5px;
+
 }
 
 /* O codigo de animacao */

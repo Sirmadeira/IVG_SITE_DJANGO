@@ -20,8 +20,8 @@ class UserCadastroForm(UserCreationForm):
     }
 	class Meta:
 		model = CustomUser
-		fields = ['username', 'email','setor','password1', 'password2' ]
-		labels={'username':'Usuário','setor':'Setor da sua empresa'}
+		fields = ['username', 'email','nome_da_empresa','setor','password1', 'password2' ]
+		labels={'username':'Usuário','nome_da_empresa': 'Nome da sua empresa','setor':'Setor da sua empresa'}
 		error_messages= {
 			'username': {
 			'unique': 'Esse usuário já existe'

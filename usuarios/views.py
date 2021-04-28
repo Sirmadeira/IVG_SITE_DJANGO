@@ -21,8 +21,6 @@ def Cadastro(request):
 				email_sender,
 				[email_usuario],
 				)
-			print(email_usuario)
-			print(email_sender)
 			email_verif.send(fail_silently=False)
 			form.save()
 			messages.success(request, f'Sua conta foi criada com sucesso!Favor verificar seu email para poder ter acesso!')

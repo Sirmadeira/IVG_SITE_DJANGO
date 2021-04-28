@@ -6,10 +6,10 @@ from django.conf import settings
 User= settings.AUTH_USER_MODEL
 
 class CustomUser(AbstractUser):
-	email = models.EmailField(unique=True)
+	email = models.EmailField(unique=False)
+	nome_da_empresa=models.CharField(max_length = 60,error_messages={'required':'Favor inserir um nome'})
 	setor_escolhas = (
         ("R", "Revendedora"),
-        ("C", "Concessionária"),
     )
 	setor= models.CharField(max_length=1,choices=setor_escolhas, blank=False, null=False)
 

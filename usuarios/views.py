@@ -1,6 +1,8 @@
+import os
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.mail import EmailMessage
 from .forms import UserCadastroForm, UserUpdateForm, EmpresaUpdateForm
 
 
@@ -8,8 +10,22 @@ def Cadastro(request):
 	if request.method == 'POST':
 		form = UserCadastroForm(request.POST)
 		if form.is_valid():
+			submitbutton= request.POST.get("submit")
+			email_subject = 'Ative sua conta!'
+			email_body ='batata'
+			email_sender = os.environ.get('MAIL_USERNAME')
+			email_usuario = form.cleaned_data.get('email')
+			email_verif= EmailMessage(
+				email_subject,
+				email_body,
+				email_sender,
+				[email_usuario],
+				)
+			print(email_usuario)
+			print(email_sender)
+			email_verif.send(fail_silently=False)
 			form.save()
-			messages.success(request, f'Sua conta foi criada com sucesso!')
+			messages.success(request, f'Sua conta foi criada com sucesso!Favor verificar seu email para poder ter acesso!')
 			return redirect('Login')
 	else:
 		form = UserCadastroForm()

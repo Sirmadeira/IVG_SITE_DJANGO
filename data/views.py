@@ -7,7 +7,6 @@ from .models import DataDB
 from .decorators import usuarios_permitidos
 
 @login_required
-@usuarios_permitidos(allowed_roles=['admin','cliente_checado'])
 def InsiraDado(request):
 	if request.method == 'POST':
 		form = InsiraDadosForm(request.POST)
@@ -35,7 +34,6 @@ def InsiraDado(request):
 	return render(request, 'data/insiradado.html', {'form': form})
 	
 @login_required
-@usuarios_permitidos(allowed_roles=['admin','cliente_checado'])
 def VisualizarMercado(request):
 	user= request.user
 	contador = DataDB.objects.filter(autor = user).count()
@@ -73,14 +71,12 @@ def Update(request, pk):
 	return render(request, 'data/insiradado.html', {'form':form})
 
 @login_required
-@usuarios_permitidos(allowed_roles=['admin','cliente_checado'])
 def Destroir(request, pk):  
     query = DataDB.objects.get(id=pk)  
     query.delete()  
     return redirect("data-VisualizarMercado")  
 
 @login_required
-@usuarios_permitidos(allowed_roles=['admin','cliente_checado'])
 def AutocompleteModelo(request):
 	term = request.GET.get('term')
 	if term:
@@ -89,7 +85,6 @@ def AutocompleteModelo(request):
 	return render(request,'data.insiradado.html')
 
 @login_required
-@usuarios_permitidos(allowed_roles=['admin','cliente_checado'])
 def AutocompleteMotor(request):
 	term = request.GET.get('term')
 	if term:

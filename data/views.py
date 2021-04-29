@@ -4,7 +4,6 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import InsiraDadosForm
 from .models import DataDB
-from .decorators import usuarios_permitidos
 
 @login_required
 def InsiraDado(request):

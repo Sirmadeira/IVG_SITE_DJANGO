@@ -4,8 +4,11 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import InsiraDadosForm
 from .models import DataDB
+from .decorators import usuarios_permitidos
+
 
 @login_required
+@usuarios_permitidos(allowed_roles=['admin','cliente_checado'])
 def InsiraDado(request):
 	if request.method == 'POST':
 		form = InsiraDadosForm(request.POST)
@@ -33,6 +36,7 @@ def InsiraDado(request):
 	return render(request, 'data/insiradado.html', {'form': form})
 	
 @login_required
+@usuarios_permitidos(allowed_roles=['admin','cliente_checado'])
 def VisualizarMercado(request):
 	user= request.user
 	contador = DataDB.objects.filter(autor = user).count()
@@ -43,6 +47,7 @@ def VisualizarMercado(request):
 	return render(request, 'data/visualizarmercado.html', {'query': query})
 
 @login_required
+@usuarios_permitidos(allowed_roles=['admin','cliente_checado'])
 def Update(request, pk):
 	dado = DataDB.objects.get(id=pk)
 	form = InsiraDadosForm(instance=dado)
@@ -70,6 +75,7 @@ def Update(request, pk):
 	return render(request, 'data/insiradado.html', {'form':form})
 
 @login_required
+@usuarios_permitidos(allowed_roles=['admin','cliente_checado'])
 def Destroir(request, pk):  
     query = DataDB.objects.get(id=pk)  
     query.delete()  

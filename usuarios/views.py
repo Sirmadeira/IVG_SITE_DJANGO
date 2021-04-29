@@ -9,7 +9,10 @@ def Cadastro(request):
 	if request.method == 'POST':
 		form = UserCadastroForm(request.POST)
 		if form.is_valid():
-			form.save()
+			user=form.save()
+			username=form.cleaned_data.get('username')
+			group = Group.objects.get(name='cliente_nao_checado')
+			user.groups.add(group)
 			messages.success(request, f'Sua conta foi criada com sucesso!Favor aguardar enquanto a gente verifica se você é um parceiro!')
 			return redirect('Login')
 	else:

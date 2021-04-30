@@ -1,14 +1,16 @@
 {% extends "APP_IVG/layout.html" %}
 {% load crispy_forms_tags %}
+{% load static %}
 {% block content %}
+<div class="container-fluid" style=" background-image: url({% static 'imagens/Login-Cadastro-Background.jpg' %}); background-size: cover; height: auto; margin: -50px 0 0 0; padding: 50px; width: 100%; ">
 	<div class= "content-section">
 		<form method= "POST">
 			{% csrf_token %}
-			<fieldset class = 'form-group'>
+			<fieldset class = 'form-group text-dark'>
 				<legend class= "border-bottom mb-4"> Login </legend>
 				{{ form|crispy }}
 			</fieldset>
-			<div class = "form-group">
+			<div class = "form-group text-dark">
 				<button class= "btn btn-outline-info" type= "submit"> Login </button>
 				<small class= "text-muted ml-2">
 					<a href="{% url 'password_reset' %}"> Esqueceu sua senha? </a>
@@ -21,4 +23,5 @@
 			</small>
 		</div>	
 	</div>
+</div>
 {% endblock content %}

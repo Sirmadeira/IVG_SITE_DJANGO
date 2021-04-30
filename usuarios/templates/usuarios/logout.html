@@ -1,9 +1,12 @@
 {% extends "APP_IVG/layout.html" %}
+{% load static %}
 {% block content %}
+<div class="container-fluid" style=" background-image: url({% static 'imagens/Login-Cadastro-Background.jpg' %}); background-size: cover; height: auto; margin: -50px 0 0 0; padding: 50px; width: 100%; ">
 	<h2> Você foi deslogado! </h2>
 	<div class= "border-top pt-3">
 		<small class= "text-muted"> 
 			<a href = "{% url 'Login' %}"> De login denovo </a>
 		</small>
-	</div>	
+	</div>
+</div>
 {% endblock content %}

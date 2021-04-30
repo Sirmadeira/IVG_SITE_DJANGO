@@ -38,7 +38,7 @@ transition: .5s;
   left: 0px;
   width: 100%;
   transition: .5s;
-  padding: 25px 0 40px 140px;
+  padding: 25px 140px 40px 140px;
 }
 
 .topnav a {

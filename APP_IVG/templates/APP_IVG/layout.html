@@ -148,14 +148,24 @@ function scroll() {
     logo.classList.add("stickyLogo");
     home.classList.add("text-dark");
     sobre.classList.add("text-dark");
-    faq.classList.add("text-dark"); 
-    dadosDeMercado.classList.add("text-dark");
-    inserirDados.classList.add("text-dark"); 
-    suaEmpresa.classList.add("text-dark");
-    logout.classList.add("text-dark");
-    login.classList.add("text-dark");
-    register.classList.add("text-dark"); 
-  
+    faq.classList.add("text-dark");
+
+      if (login === null) {
+    }
+    else {
+      login.classList.add("text-dark");
+      register.classList.add("text-dark");
+    }
+
+    if (logout === null) {
+    }
+    else {
+      logout.classList.add("text-dark");
+      dadosDeMercado.classList.add("text-dark");
+      inserirDados.classList.add("text-dark"); 
+      suaEmpresa.classList.add("text-dark");
+    }
+
   } else {
     x.classList.remove("sticky");
     bar1.classList.remove("bg-dark");
@@ -164,13 +174,24 @@ function scroll() {
     logo.classList.remove("stickyLogo");
     home.classList.remove("text-dark");
     sobre.classList.remove("text-dark");
-    faq.classList.remove("text-dark"); 
+    faq.classList.remove("text-dark");
+
+    if (login === null) {
+    }
+    else {
+    login.classList.remove("text-dark");
+    register.classList.remove("text-dark");
+    }
+
+    if (logout === null) {
+    }
+    else {
     dadosDeMercado.classList.remove("text-dark");
     inserirDados.classList.remove("text-dark"); 
     suaEmpresa.classList.remove("text-dark");
     logout.classList.remove("text-dark");
-    login.classList.remove("text-dark");
-    register.classList.remove("text-dark"); 
+    }
+    
   }
 }
 
@@ -188,6 +209,7 @@ for (i = 0; i < acc.length; i++) {
     } 
   });
 }
+
     </script> 
     <!-- Bootstrap scripts o do jquery foi retirado para evitar conflitos-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.db.models import Avg, Count
 from django.http import JsonResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -41,10 +42,17 @@ def VisualizarMercado(request):
 	user= request.user
 	contador = DataDB.objects.filter(autor = user).count()
 	faltante = 5-contador
+	#Query para tabela crud!
+	query1= DataDB.objects.filter(autor = user ).all()
+	#Query para tabela top 10 marcas mais vendidas
+	query2= DataDB.objects.values('marca').annotate(marcas=Count('marca')).order_by('-marcas')[:10]
+	#Query para tabela top 10 modelos mais vendidos
+	query3= DataDB.objects.values('marca','modelo','ano').annotate(modelos=Count('modelo')).order_by('-modelos')[:10]
+	#Query para tabela de media de lucro mais vendidos
+	query4=DataDB.objects.values('marca','modelo','ano').annotate(medias=Avg('margem_de_lucro')).order_by('-medias')
 	if contador < 5 :
 		return render(request, 'data/semdados.html', {'contador' : contador, 'faltante' : faltante})
-	query= DataDB.objects.all()
-	return render(request, 'data/visualizarmercado.html', {'query': query})
+	return render(request, 'data/visualizarmercado.html', {'query1': query1,'query2':query2,'query3':query3,'query4':query4})
 
 @login_required
 @usuarios_permitidos(allowed_roles=['admin','cliente_checado'])

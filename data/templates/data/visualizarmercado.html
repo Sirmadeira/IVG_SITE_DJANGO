@@ -19,7 +19,7 @@
             <th>Deletar</th>
 
         </thead>
-		{% for q in query %}
+		{% for q in query1 %}
 		<tr>
 			<td> {{ q.marca }} </td>
 			<td> {{ q.modelo }} </td>
@@ -38,5 +38,49 @@
 		</tr>
 		{% endfor %}
 	</table>
-
+	<table class="table table-striped table-dark" width="100%">
+		<thead>
+			<th>Marca</th>
+			<th>N* de vendas</th>
+		</thead>
+		{%for q in query2 %}
+		<tr>
+			<td>{{q.marca}}</td>
+			<td>{{q.marcas}}</td>
+		</tr>
+		{% endfor%}
+	</table>
+	<table class="table table-striped table-dark" width="100%">
+		<thead>
+			<th>Posicao</th>>
+			<th>Marca</th>
+			<th>Modelo</th>
+			<th>Ano</th>
+			<th>N* de vendas</th>
+		</thead>
+		{%for q in query3 %}
+		<tr>
+			<td>{{q.marca}}</td>
+			<td>{{q.modelo}}</td>
+			<td>{{q.ano}}</td>
+			<td>{{q.modelos}}</td>
+		</tr>
+		{% endfor%}
+	</table>
+	<table class="table table-striped table-dark" width="100%">
+		<thead>
+			<th>Marca</th>
+			<th>Modelo</th>
+			<th>Ano</th>
+			<th>Média de lucro</th>
+		</thead>
+		{%for q in query4 %}
+		<tr>
+			<td>{{q.marca}}</td>
+			<td>{{q.modelo}}</td>
+			<td>{{q.ano}}</td>
+			<td>{{q.medias}} %</td>
+		</tr>
+		{% endfor%}
+	</table>
 {% endblock content %}

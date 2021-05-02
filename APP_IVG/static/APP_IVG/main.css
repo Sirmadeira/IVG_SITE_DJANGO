@@ -46,7 +46,7 @@ transition: .5s;
   text-decoration: none;
   font-size: 3vw;
   letter-spacing: 2px;
-  margin: 10px 0px 0px 1vw;
+  margin: 10px 0px 0px .5vw;
   text-transform: uppercase;
   outline: 0 none;
   border-radius: 20px;
@@ -284,6 +284,44 @@ div.content-section{
 .active .bi {
   transform: rotate(180deg);
 }
+
+/*Tags do Visualizar Mercado*/
+
+#adicionarNovoDado {
+  position: relative;
+  margin-left: 10px;
+  margin-top: 25px; 
+  float: left;
+}
+
+#bootstrapdatatable_filter {
+   float: right; 
+   margin-right: 10px;
+  }
+
+#bootstrapdatatable_length {
+  float: right; 
+}
+
+.pagination {
+  float: right;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 700px){
+  #adicionarNovoDado {
+  position: relative;
+  margin-top: 105px; 
+  float: right;
+  margin-right: 10px;
+}
+#bootstrapdatatable_length {
+  float: left;
+} 
+#bootstrapdatatable_filter {
+  float: right;
+  }
+  }
 
 /* O codigo de animacao */
 @keyframes TransiçãoY {

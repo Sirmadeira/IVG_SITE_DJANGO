@@ -1,32 +1,36 @@
 {% extends "APP_IVG/layout.html" %}
+{% load static %}
 {% block content %}
-	<a href="{% url 'data-InsiraDado' %}" class="btn btn-primary">Adicionar novo dado</a></span>
-	<table id="bootstrapdatatable" class="table table-striped table-dark" width="100%">
-		<thead>
-            <th>Marca</th>
-            <th>Modelo</th>
-            <th>Ano</th>
-            <th>Cor</th>
-            <th>Quilometragem</th>
-            <th>Lucro</th>
-            <th>Preco</th>
-            <th>Porcentagem de lucro</th>
-            <th>Deletar</th>
+<div class="container-fluid" style=" background-image: url({% static 'imagens/VisualizarMercado-Background01.jpg' %}); background-size: cover; height: auto; margin: -50px 0 0 0; padding: 10vw 10vw; width: 100%;">
+	<div class="container-fluid bg-white text-dark" style="border-radius: 20px; max-width: 950px; padding: 10px 0 0 20px;">
+		<table id="bootstrapdatatable" class="table table-striped table-white table-responsive">
+			<a id="adicionarNovoDado" href="{% url 'data-InsiraDado' %}" class="btn btn-primary">Adicionar novo dado</a>
+			<thead>
+	            <th>Marca</th>
+	            <th>Modelo</th>
+	            <th>Ano</th>
+	            <th>Cor</th>
+	            <th>Quilometragem</th>
+	            <th>Lucro</th>
+	            <th>Preco</th>
+	            <th>Porcentagem de lucro</th>
+	            <th>Deletar</th>
 
-        </thead>
-		{% for q in query %}
-		<tr>
-			<td> {{ q.marca }} </td>
-			<td> {{ q.modelo }} </td>
-			<td> {{ q.ano }} </td>
-			<td> {{ q.cor }} </td>
-			<td> {{ q.quilometragem }} </td>
-			<td> R${{ q.lucro }}</td>
-			<td> R${{ q.preco }} </td>
-			<td> {{ q.margem_de_lucro }}%</td>
-			<td><a href="{% url 'data-Deletar' q.id %}" class="btn btn-danger"></a></td>
-		</tr>
-		{% endfor %}
-	</table>
-
+	        </thead>
+			{% for q in query %}
+			<tr>
+				<td> {{ q.marca }} </td>
+				<td> {{ q.modelo }} </td>
+				<td> {{ q.ano }} </td>
+				<td> {{ q.cor }} </td>
+				<td> {{ q.quilometragem }} </td>
+				<td> R${{ q.lucro }}</td>
+				<td> R${{ q.preco }} </td>
+				<td> {{ q.margem_de_lucro }}%</td>
+				<td><a href="{% url 'data-Deletar' q.id %}" class="btn btn-danger"></a></td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
 {% endblock content %}

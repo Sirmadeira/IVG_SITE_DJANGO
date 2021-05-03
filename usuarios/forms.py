@@ -64,6 +64,7 @@ class UserUpdateForm(forms.ModelForm):
 		model = CustomUser
 		fields = ['username', 'email']
 		labels = {'username':'Usuário'}
+		help_texts={'username':'Favor evitar uso de carateres especiais, algo além desses @/./+/-/_ não será aceito'}
 
 class EmpresaUpdateForm(forms.ModelForm):
 	class Meta:

@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import InsiraDadosForm
 from .models import DataDB
 from .decorators import usuarios_permitidos
+from .utils import get_plot
 
 
 @login_required
@@ -50,9 +51,14 @@ def VisualizarMercado(request):
 	query3= DataDB.objects.values('marca','modelo','ano').annotate(modelos=Count('modelo')).order_by('-modelos')[:10]
 	#Query para tabela de media de lucro mais vendidos
 	query4=DataDB.objects.values('marca','modelo','ano').annotate(medias=Avg('margem_de_lucro')).order_by('-medias')
+	#Plots
+	query5= DataDB.objects.only('marca','preco')
+	x = [x.marca for x in query5]
+	y = [y.preco for y in query5]
+	grafico1= get_plot(x,y)
 	if contador < 5 :
 		return render(request, 'data/semdados.html', {'contador' : contador, 'faltante' : faltante})
-	return render(request, 'data/visualizarmercado.html', {'query1': query1,'query2':query2,'query3':query3,'query4':query4})
+	return render(request, 'data/visualizarmercado.html', {'query1': query1,'query2':query2,'query3':query3,'query4':query4,'grafico1':grafico1})
 
 @login_required
 @usuarios_permitidos(allowed_roles=['admin','cliente_checado'])

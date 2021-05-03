@@ -88,7 +88,7 @@
 			<td>{{q.marca}}</td>
 			<td>{{q.modelo}}</td>
 			<td>{{q.ano}}</td>
-			<td>{{q.medias}} %</td>
+			<td>{{q.medias|floatformat:4}} %</td>
 		</tr>
 		{% endfor%}
 	</table>

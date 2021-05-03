@@ -46,9 +46,9 @@ def VisualizarMercado(request):
 	#Query para tabela crud!
 	query1= DataDB.objects.filter(autor = user ).all()
 	#Query para tabela top 10 marcas mais vendidas
-	query2= DataDB.objects.values('marca').annotate(marcas=Count('marca')).order_by('-marcas')[:10]
+	query2= DataDB.objects.values('marca').annotate(marcas=Count('marca')).order_by('-marcas')
 	#Query para tabela top 10 modelos mais vendidos
-	query3= DataDB.objects.values('marca','modelo','ano').annotate(modelos=Count('modelo')).order_by('-modelos')[:10]
+	query3= DataDB.objects.values('marca','modelo','ano').annotate(modelos=Count('modelo')).order_by('-modelos')
 	#Query para tabela de media de lucro mais vendidos
 	query4=DataDB.objects.values('marca','modelo','ano').annotate(medias=Avg('margem_de_lucro')).order_by('-medias')
 	#Plots

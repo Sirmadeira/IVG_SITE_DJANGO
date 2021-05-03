@@ -24,7 +24,6 @@ top: -45px;
 left: 0;
 height: 200px;
 width: auto;
-
 }
 
 .stickyLogo {
@@ -38,10 +37,7 @@ transition: .5s;
   left: 0px;
   width: 100%;
   transition: .5s;
-  padding: 25px 0 40px 140px;
-
-
-
+  padding: 25px 0 40px 140px; 
   }
 
 .topnav a {
@@ -49,7 +45,7 @@ transition: .5s;
   text-decoration: none;
   font-size: 3vw;
   letter-spacing: 2px;
-  margin: 10px 0px 0px 1vw;
+  margin: 10px 0px 0px .5vw;
   text-transform: uppercase;
   outline: 0 none;
   border-radius: 20px;
@@ -57,8 +53,9 @@ transition: .5s;
   transition-timing-function: linear;
   transition-property: all;
   color: white;
-  float: right;
+  float: left;
   display: inline-block;
+  text-align: center;
 }
 
 .topnav .menu:hover {
@@ -159,11 +156,6 @@ text-shadow: 0px 0px 5px rgba(82,168,236,.8);
   font-size: 2.5rem;
 }
 
-main{
-  padding: 0px;
-  margin: 500px 0 0 0;
-}
-
 .no-gutters{
   margin-right: 0px;
   margin-left: 0;
@@ -229,25 +221,104 @@ div.content-section{
   min-width: 400px; 
   margin: 50px auto;
   height: auto;
-  color: black;
+  color: white;
 }
 
 /*Tags do FAQ*/
-.accordion-button:not(.collapsed) {
-  color: #0c63e4;
-  background-color: #74A4F7;
+.fundoDoAccordion {
+  background-color: white;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-size: 25px;
+  border-radius: 20px;
+  text-align: center;
+  color: black;
+  letter-spacing: 2px;
 }
 
-.accordion-button .arrow {
-  position: relative;
-  color: black;
-  border-size: 1rem;
-  border-left: 1rem;
-  border-bottom: 1rem;
-  height: 1rem;
-  width: 1rem;
-  transform: rotate(135deg);
+.accordion {
+  background-color: white;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  margin-bottom: 5px;
+  width: 100%;
+  border: solid 1px #ccc;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
 }
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  overflow-wrap: break-word;
+  color: black;
+  letter-spacing: 1px;
+  font-size: 14px;
+  transition: .4s;
+  border: none;
+  outline: none;
+}
+
+.bi {
+  font-size: 25px;
+  color: #777;
+  float: right;
+  transition: .2s ease-out;
+}
+
+.active .bi {
+  transform: rotate(180deg);
+}
+
+/*Tags do Visualizar Mercado*/
+
+#adicionarNovoDado {
+  position: relative;
+  margin-left: 10px;
+  margin-top: 25px; 
+  float: left;
+  }
+  
+#bootstrapdatatable_filter {
+   float: right; 
+   margin-right: 10px;
+  }
+
+#bootstrapdatatable_length {
+  float: right; 
+}
+
+.pagination {
+  float: right;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 700px){
+  #adicionarNovoDado {
+  position: relative;
+  margin-top: 105px; 
+  float: right;
+  margin-right: 10px;
+}
+#bootstrapdatatable_length {
+  float: left;
+} 
+#bootstrapdatatable_filter {
+  float: right;
+  }
+  }
 
 /* O codigo de animacao */
 @keyframes TransiçãoY {

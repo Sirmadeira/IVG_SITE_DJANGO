@@ -1,7 +1,9 @@
 {% extends "APP_IVG/layout.html" %}
 {% load crispy_forms_tags %}
+{% load static %}
 {% block content %}
-	<div class = "content-section">
+<div class="container-fluid" style="background-image: url({% static 'imagens/Empresa-Background.jpg' %}); background-size: cover; height: 100vw; margin: -50px 0 0 0; padding: 5px 10px 5px 0; width: 100%;">
+	<div class = "content-section text-dark" style="max-width: 1200px; min-width: 550px;">
 	 <div class = "media">
 	  <img class = 'rounded-circle account-img' src="{{ user.empresadb.image.url }}">
 	  <div class = "media-body">	
@@ -20,5 +22,6 @@
 			<button class= "btn btn-outline-info" type= "submit"> Atualize </button>
 		</div>		
 	 </form>
-	</div>	
+	</div>
+</div>	
 {% endblock content %}

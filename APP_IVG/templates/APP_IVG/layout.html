@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <!-- Icones para bootstrapcdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <!-- Call da css -->
     <link rel="stylesheet" type="text/css" href="{% static 'APP_IVG/main.css' %}">
     <!-- Call dos autocompletes -->
@@ -35,8 +37,8 @@
               <a class="menu" id="sobre" href="{% url 'APP_IVG-Sobre' %}">Sobre</a>
               <a class="menu" id="faq" href="{% url 'APP_IVG-Faq' %}">Faq</a>
               {% if user.is_authenticated %}
-                <a class="menu" id="dadosDeMercado" href="{% url 'data-VisualizarMercado' %}">Dados de mercado</a>
                 <a class="menu" id="inserirDados" href="{% url 'data-InsiraDado' %}">Inserir dados</a>
+                <a class="menu" id="dadosDeMercado" href="{% url 'data-VisualizarMercado' %}">Dados de mercado</a>
                 <a class="menu" id="suaEmpresa" href="{% url 'Empresa' %}">Sua empresa</a>
                 <a class="menu" id="logout"  href="{% url 'Logout' %}">Logout</a>
               {% else %}
@@ -89,75 +91,112 @@
                         <li>Cep: 056.92-160</li> 
                         <li>Bairro Morumbi, SP Capital</li>
                         <li>TEL.: (11) 97498-4826</li>
-                        <li> SAC: ivgtecnologia@gmail.com</li>
+                        <li>SAC: ivgtecnologia@gmail.com</li>
+                        <li>CNPJ: 40.462.078/0001-42</li>
                     </ul>
                 </div>
             </div>    
           </div>      
     </footer>
     <script type="">
-      var x = document.getElementById("myTopnav");
-      var y = document.getElementById("myHamburguer");
-      var logo = document.getElementById("logo");
-      var home = document.getElementById("home");
-      var sobre = document.getElementById("sobre");
-      var faq = document.getElementById("faq");
-      var dadosDeMercado = document.getElementById("dadosDeMercado");
-      var inserirDados = document.getElementById("inserirDados");
-      var suaEmpresa = document.getElementById("suaEmpresa");
-      var logout = document.getElementById("logout");
-      var login = document.getElementById("login");
-      var register = document.getElementById("register");
-      var bar1 = document.getElementById("bar1");
-      var bar2 = document.getElementById("bar2");
-      var bar3 = document.getElementById("bar3");
-      /* Responsividade do hamburguer*/
-      function myFunction() {
-        if (y.className === "hamburguer") {
-          y.classList.add("change");
-          x.classList.add("responsive");
-        }
-        else {
-          y.classList.remove("change");
-          x.classList.remove("responsive");
-        }
-      }
-      window.onscroll = function() {scroll()};
-      var sticky = x.offsetTop;
-      function scroll() {
-        if (window.pageYOffset > sticky) {
-          x.classList.add("sticky");
-          bar1.classList.add("bg-dark");
-          bar2.classList.add("bg-dark");
-          bar3.classList.add("bg-dark");
-          logo.classList.add("stickyLogo");
-          home.classList.add("text-dark");
-          sobre.classList.add("text-dark");
-          faq.classList.add("text-dark"); 
-          dadosDeMercado.classList.add("text-dark");
-          inserirDados.classList.add("text-dark"); 
-          suaEmpresa.classList.add("text-dark");
-          logout.classList.add("text-dark");
-          login.classList.add("text-dark");
-          register.classList.add("text-dark"); 
+        var x = document.getElementById("myTopnav");
+        var y = document.getElementById("myHamburguer");
+        var logo = document.getElementById("logo");
+        var home = document.getElementById("home");
+        var sobre = document.getElementById("sobre");
+        var faq = document.getElementById("faq");
+        var dadosDeMercado = document.getElementById("dadosDeMercado");
+        var inserirDados = document.getElementById("inserirDados");
+        var suaEmpresa = document.getElementById("suaEmpresa");
+        var logout = document.getElementById("logout");
+        var login = document.getElementById("login");
+        var register = document.getElementById("register");
+        var bar1 = document.getElementById("bar1");
+        var bar2 = document.getElementById("bar2");
+        var bar3 = document.getElementById("bar3");
+          /* Responsividade do hamburguer*/
+          function myFunction() {
+            if (y.className === "hamburguer") {
+              y.classList.add("change");
+              x.classList.add("responsive");
+            }
+            else {
+              y.classList.remove("change");
+              x.classList.remove("responsive");
+            }
+          }
+          window.onscroll = function() {scroll()};
+        var sticky = x.offsetTop;
+       function scroll() {
+            if (window.pageYOffset > sticky) {
+              x.classList.add("sticky");
+              bar1.classList.add("bg-dark");
+              bar2.classList.add("bg-dark");
+              bar3.classList.add("bg-dark");
+              logo.classList.add("stickyLogo");
+              home.classList.add("text-dark");
+              sobre.classList.add("text-dark");
+              faq.classList.add("text-dark");
 
+                if (login === null) {
+              }
+              else {
+                login.classList.add("text-dark");
+                register.classList.add("text-dark");
+              }
+
+              if (logout === null) {
+              }
+              else {
+                logout.classList.add("text-dark");
+                dadosDeMercado.classList.add("text-dark");
+                inserirDados.classList.add("text-dark"); 
+                suaEmpresa.classList.add("text-dark");
+              }
+
+            } else {
+              x.classList.remove("sticky");
+              bar1.classList.remove("bg-dark");
+              bar2.classList.remove("bg-dark");
+              bar3.classList.remove("bg-dark");
+              logo.classList.remove("stickyLogo");
+              home.classList.remove("text-dark");
+              sobre.classList.remove("text-dark");
+              faq.classList.remove("text-dark");
+
+              if (login === null) {
+              }
+              else {
+              login.classList.remove("text-dark");
+              register.classList.remove("text-dark");
+              }
+
+              if (logout === null) {
+              }
+              else {
+              dadosDeMercado.classList.remove("text-dark");
+              inserirDados.classList.remove("text-dark"); 
+              suaEmpresa.classList.remove("text-dark");
+              logout.classList.remove("text-dark");
+              }
+
+            }
+          }
+
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
         } else {
-          x.classList.remove("sticky");
-          bar1.classList.remove("bg-dark");
-          bar2.classList.remove("bg-dark");
-          bar3.classList.remove("bg-dark");
-          logo.classList.remove("stickyLogo");
-          home.classList.remove("text-dark");
-          sobre.classList.remove("text-dark");
-          faq.classList.remove("text-dark"); 
-          dadosDeMercado.classList.remove("text-dark");
-          inserirDados.classList.remove("text-dark"); 
-          suaEmpresa.classList.remove("text-dark");
-          logout.classList.remove("text-dark");
-          login.classList.remove("text-dark");
-          register.classList.remove("text-dark"); 
-        }
-      }
+          panel.style.maxHeight = panel.scrollHeight + 30 + "px";
+        } 
+      });
+    }
     </script> 
     <!-- Bootstrap scripts o do jquery foi retirado para evitar conflitos-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

@@ -1,7 +1,10 @@
 {% extends "APP_IVG/layout.html" %}
+{% load static %}
 {% block content %}
-	<a href="{% url 'data-InsiraDado' %}" class="btn btn-primary">Adicionar novo dado</a></span>
-	<table id="bootstrapdatatable" class="table table-striped table-dark" width="100%">
+<div class="container-fluid" style=" background-image: url({% static 'imagens/VisualizarMercado-Background01.jpg' %}); background-size: cover; height: auto; margin: -50px 0 0 0; padding: 10vw 10vw; width: 100%;">
+	<div class="container-fluid bg-white text-dark" style="border-radius: 20px; max-width: 950px; padding: 10px 0 0 20px;">
+	<table id="bootstrapdatatable" class="table table-striped table-dark table-responsive" width="100%">
+		<a href="{% url 'data-InsiraDado' %}" class="btn btn-primary">Adicionar novo dado</a></span>
 		<thead>
 			<th>Ultimos dados</th>
             <th>Marca</th>
@@ -100,4 +103,5 @@
           );
       } );
     </script>
+   </div>
 {% endblock content %}

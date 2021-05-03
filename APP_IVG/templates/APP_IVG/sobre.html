@@ -1,4 +1,60 @@
 {% extends "APP_IVG/layout.html" %}
+{% load static %}
 {% block content %}
-	<h1>Template sobre</h1>
+<div class="container-fluid" style="background-image: url({% static 'imagens/Sobre-Background.jpg' %}); background-size: cover; height: 60vw; margin: -50px 0 0 0; padding: 9% 0; width: 100%;">
+  <div class="col-lg bg-dark d-none" style="opacity: .9">
+    <h1 style="padding-left: 60px; letter-spacing: 5px;">Diretrizes da IVG</h1>
+        <p style="list-style: none; font-size: 12px; margin-left: 60px; width: 400px;">A IVG é uma empresa centralizada na reformulação de dados gerais de mercado, e também na formulação de novos dados que não são facilmente concluídos por uma mente humana de maneira rápida, e geralmente requerem de sistemas de inteligência artificial para serem formulados. Como regressões, classificações, clusteres, etc. Ela tambem visa formatar graficos capazes de
+        identificar futuras consequências ou  reações de mercado, extremamente valiosos para qualquer atuante.</p>
+  </div>
+  <div class="" style="max-width: 1000px;">
+  </div>
+</div>
+<div class="row bg-light py-4 mx-0 my-auto" style="height: auto; width: 100%; min-height: 400px;"> 
+    <div class="col-lg mt-5 text-center">
+      <div class="text-dark mb-3 mx-auto">
+      <div class="" style="letter-spacing: 2px;">
+        <h1>Nossos valores:</h1>
+      </div>
+      <div class="">
+        <h5 class=""></h5>
+          <ol class="" style="list-style: none; width: auto; padding: 0; letter-spacing: 2px; font-size: 20px; font-weight: bold;">
+              <li>Solidez | Confiança</li>
+              <li>Solidariedade | Seguridade</li>
+              <li>Capacidade | Crescimento</li>
+          </ol>
+      </div>
+      </div>
+      </div>
+      <div class="col-lg mt-5 text-center">
+      <div class="text-dark border border-secondary border-top-0 border-bottom-0 mb-3 mx-auto">
+        <div class="" style="letter-spacing: 2px;">
+          <h1>Visão</h1>
+        </div>
+        <div class="">
+        <h5 class=""></h5>
+          <ol style="list-style: none; width: auto; padding: 0; letter-spacing: 2px;  font-size: 20px; font-weight: bold;">
+              <li> Ter um nível de influx de dados tão alto que sejamos capazes de formatar um espaço comercial completamente justo.
+              </li>
+          </ol>
+        </div>
+        </div>
+      </div>
+    <div class="col-lg mt-5 text-center">
+      <div class="text-dark mb-3 mx-auto">
+        <div class="" style="letter-spacing: 2px;">
+          <h1>Missão</h1>
+        </div>
+        <div class="">
+        <h5 class=""></h5>
+          <ol style="list-style: none; width: auto; padding: 0; letter-spacing: 2px; font-size: 20px; font-weight: bold;">
+              <li> Ajudar na tomada de decisão por meio da matemática, como no fornecimento de estatísticas, a fim de complementar a experiência e a intuição humana de comércio.
+              </li>
+          </ol>
+        </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
 {% endblock content %}

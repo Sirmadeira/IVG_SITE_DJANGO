@@ -1,3 +1,4 @@
+from django import forms
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from PIL import Image
@@ -30,4 +31,11 @@ class EmpresaDB(models.Model):
 			img.thumbnail(output_size)
 			img.save(self.image.path)
 
-# Create your models here.
+
+class Recomendacao(models.Model):
+	titulo = models.CharField(max_length = 30)
+	texto = models.TextField(max_length = 500)
+	filtro = models.ForeignKey(User,on_delete=models.CASCADE)
+	formfield_overrides = {
+        models.TextField: {'widget': forms.Textarea},
+    }

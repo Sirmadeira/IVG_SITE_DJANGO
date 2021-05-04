@@ -2,3 +2,6 @@
 *.pyc
 
 
+usuarios/__pycache__/views.cpython-39.pyc
+usuarios/__pycache__/models.cpython-39.pyc
+usuarios/__pycache__/admin.cpython-39.pyc

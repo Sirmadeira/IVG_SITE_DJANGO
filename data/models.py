@@ -57,4 +57,3 @@ class DataDB(models.Model):
 	data_postada = models.DateTimeField(default=timezone.now)
 
 	autor = models.ForeignKey(User, on_delete=models.CASCADE)
-

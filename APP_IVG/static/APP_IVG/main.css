@@ -283,6 +283,9 @@ div.content-section{
 }
 
 /*Tags do Visualizar Mercado*/
+tr {
+  color: white;
+}
 
 #adicionarNovoDado {
   position: relative;
@@ -291,18 +294,68 @@ div.content-section{
   float: left;
   }
   
-#bootstrapdatatable_filter {
+#bootstrapdatatable01_filter {
    float: right; 
-   margin-right: 10px;
+   margin-right: 30px;
+   margin-bottom: 30px;
   }
 
-#bootstrapdatatable_length {
+#bootstrapdatatable02_filter {
+   float: right; 
+   margin-right: 30px;
+   margin-bottom: 30px;
+  }
+
+
+#bootstrapdatatable03_filter {
+   float: right; 
+   margin-right: 30px;
+   margin-bottom: 30px;
+  }
+
+
+#bootstrapdatatable04_filter {
+   float: right; 
+   margin-right: 30px;
+   margin-bottom: 30px;
+  }
+
+#bootstrapdatatable01_length {
+  margin-top: 25px; 
   float: right; 
+}
+
+#bootstrapdatatable02_length {
+  margin-top: 25px; 
+  float: left; 
+}
+
+#bootstrapdatatable03_length {
+  margin-top: 25px; 
+  float: left; 
+}
+
+#bootstrapdatatable04_length {
+  margin-top: 25px; 
+  float: left; 
+}
+
+#bootstrapdatatable02_info {
+  margin-top: 25px; 
+}
+
+#bootstrapdatatable03_info {
+  margin-top: 25px; 
+}
+
+#bootstrapdatatable04_info {
+  margin-top: 25px; 
 }
 
 .pagination {
   float: right;
   margin-right: 20px;
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 700px){
@@ -312,10 +365,10 @@ div.content-section{
   float: right;
   margin-right: 10px;
 }
-#bootstrapdatatable_length {
+#bootstrapdatatable01_length {
   float: left;
 } 
-#bootstrapdatatable_filter {
+#bootstrapdatatable01_filter {
   float: right;
   }
   }

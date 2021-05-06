@@ -7,6 +7,8 @@ from .forms import InsiraDadosForm
 from .models import DataDB
 from .decorators import usuarios_permitidos
 from .utils import get_plot
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 
 @login_required
@@ -48,9 +50,9 @@ def VisualizarMercado(request):
 	#Query para tabela top 10 marcas mais vendidas
 	query2= DataDB.objects.values('marca').annotate(marcas=Count('marca')).order_by('-marcas')
 	#Query para tabela top 10 modelos mais vendidos
-	query3= DataDB.objects.values('marca','modelo','ano').annotate(modelos=Count('modelo')).order_by('-modelos')
+	query3= DataDB.objects.values('marca','modelo','motor','ano').annotate(modelos=Count('modelo')).order_by('-modelos')
 	#Query para tabela de media de lucro mais vendidos
-	query4=DataDB.objects.values('marca','modelo','ano').annotate(medias=Avg('margem_de_lucro')).order_by('-medias')
+	query4=DataDB.objects.values('marca','modelo','motor','ano').annotate(medias=Avg('margem_de_lucro')).order_by('-medias')
 	#Plots
 	query5= DataDB.objects.only('marca','preco')
 	x = [x.marca for x in query5]
@@ -96,6 +98,7 @@ def Destroir(request, pk):
     return redirect("data-VisualizarMercado")  
 
 @login_required
+@usuarios_permitidos(allowed_roles=['admin'])
 def AutocompleteModelo(request):
 	term = request.GET.get('term')
 	if term:
@@ -104,9 +107,18 @@ def AutocompleteModelo(request):
 	return render(request,'data.insiradado.html')
 
 @login_required
+@usuarios_permitidos(allowed_roles=['admin'])
 def AutocompleteMotor(request):
 	term = request.GET.get('term')
 	if term:
 		motores = list(DataDB.objects.filter(motor__istartswith=request.GET.get('term')).values_list('motor', flat=True).order_by("motor").distinct())
 		return JsonResponse(motores, safe=False)
 	return render(request,'data.insiradado.html')
+
+class DadosDeGrafico(APIView):
+    authentication_classes = []
+    permission_classes = []
+
+    def get(self, request, format=None):
+    	data = list(DataDB.objects.values('marca').all())
+    	return Response(data)

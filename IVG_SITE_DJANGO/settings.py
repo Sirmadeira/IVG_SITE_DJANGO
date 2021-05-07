@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'APP_IVG.apps.AppIvgConfig',
     'usuarios.apps.UsuariosConfig',
     'data.apps.DataConfig',
+    'datac.apps.DatacConfig',
     'crispy_forms', 
     'django.contrib.admin',
     'django.contrib.auth',

@@ -45,7 +45,7 @@ def VisualizarMercado(request):
 	user= request.user
 	contador = DataDB.objects.filter(autor = user).count()
 	faltante = 5-contador
-	#Query para tabela crud!
+	#Query para tabela crud vendas!
 	query1= DataDB.objects.filter(autor = user ).all()
 	#Query para tabela top 10 marcas mais vendidas
 	query2= DataDB.objects.values('marca').annotate(marcas=Count('marca')).order_by('-marcas')
@@ -53,14 +53,14 @@ def VisualizarMercado(request):
 	query3= DataDB.objects.values('marca','modelo','motor','ano').annotate(modelos=Count('modelo')).order_by('-modelos')
 	#Query para tabela de media de lucro mais vendidos
 	query4=DataDB.objects.values('marca','modelo','motor','ano').annotate(medias=Avg('margem_de_lucro')).order_by('-medias')
-	#Plots
-	query5= DataDB.objects.only('marca','preco')
-	x = [x.marca for x in query5]
-	y = [y.preco for y in query5]
-	grafico1= get_plot(x,y)
+	#Plots mecanica plots pode ser interessante no futuro
+	#query5= DataDB.objects.only('marca','preco')
+	#x = [x.marca for x in query5]
+	#y = [y.preco for y in query5]
+	#grafico1= get_plot(x,y)
 	if contador < 5 :
 		return render(request, 'data/semdados.html', {'contador' : contador, 'faltante' : faltante})
-	return render(request, 'data/visualizarmercado.html', {'query1': query1,'query2':query2,'query3':query3,'query4':query4,'grafico1':grafico1})
+	return render(request, 'data/visualizarmercado.html', {'query1': query1,'query2':query2,'query3':query3,'query4':query4})
 
 @login_required
 @usuarios_permitidos(allowed_roles=['admin','cliente_checado'])

@@ -39,7 +39,8 @@
               <a class="menu" id="sobre" href="{% url 'APP_IVG-Sobre' %}">Sobre</a>
               <a class="menu" id="faq" href="{% url 'APP_IVG-Faq' %}">Faq</a>
               {% if user.is_authenticated %}
-                <a class="menu" id="inserirDados" href="{% url 'data-InsiraDado' %}">Inserir dados</a>
+                <a class="menu" id="inserirDadosC" href="{% url 'datac-InsiraDadoC' %}">Inserir dados compras</a>
+                <a class="menu" id="inserirDados" href="{% url 'data-InsiraDado' %}">Inserir dados vendas</a>
                 <a class="menu" id="dadosDeMercado" href="{% url 'data-VisualizarMercado' %}">Dados de mercado</a>
                 <a class="menu" id="suaEmpresa" href="{% url 'Empresa' %}">Sua empresa</a>
                 <a class="menu" id="logout"  href="{% url 'Logout' %}">Logout</a>
@@ -108,6 +109,7 @@
         var sobre = document.getElementById("sobre");
         var faq = document.getElementById("faq");
         var dadosDeMercado = document.getElementById("dadosDeMercado");
+        var inserirDadosC = document.getElementById("inserirDadosC");
         var inserirDados = document.getElementById("inserirDados");
         var suaEmpresa = document.getElementById("suaEmpresa");
         var logout = document.getElementById("logout");
@@ -152,6 +154,7 @@
               else {
                 logout.classList.add("text-dark");
                 dadosDeMercado.classList.add("text-dark");
+                inserirDadosC.classList.add("text-dark");
                 inserirDados.classList.add("text-dark"); 
                 suaEmpresa.classList.add("text-dark");
               }
@@ -177,6 +180,7 @@
               }
               else {
               dadosDeMercado.classList.remove("text-dark");
+              inserirDadosC.classList.remove("text-dark");
               inserirDados.classList.remove("text-dark"); 
               suaEmpresa.classList.remove("text-dark");
               logout.classList.remove("text-dark");

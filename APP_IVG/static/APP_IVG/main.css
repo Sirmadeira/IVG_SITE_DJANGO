@@ -283,6 +283,21 @@ div.content-section{
 }
 
 /*Tags do Visualizar Mercado*/
+div .dataTables_wrapper .dataTables_paginate .paginate_button {  
+  color: white !important;
+}
+
+input{
+  color: white;
+  letter-spacing: 1px;
+  border: white;
+}
+
+th:hover {
+  cursor: pointer;
+  background-color: rgba(10, 10, 10, 0.1);
+  transition: .3s;
+}
 #bootstrapdatatable01_info {
   color: white;
 }

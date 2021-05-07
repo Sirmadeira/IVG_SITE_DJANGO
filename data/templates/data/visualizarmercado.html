@@ -3,8 +3,8 @@
 {% block content %}
 <div class="container-fluid" style="background-color: rgba(21, 64, 89, .5); background-size: cover; height: auto; margin: -50px 0; padding: 0; width: 100%;">
 	<div class="container-fluid" style="padding: 50px; width: 90%; background-image: linear-gradient(to bottom, rgba(27, 226, 216, .8), rgba(30, 90, 120, .8));">
-		<a id="adicionarNovoDado" href="{% url 'data-InsiraDado' %}" class="btn btn-primary">Adicionar novo dado</a>
-	<table id="bootstrapdatatable01" class="table table-striped table-responsive" style="width: 100%; margin bottom: 20px;">
+		<h1 style="font-size: 25px; margin-bottom: 30px;">Aqui você pode controlar os seus dados:</h1>
+	<table id="bootstrapdatatable01" class="table table-striped table-responsive" style="color: white; width: 100%; margin bottom: 20px;">
 		<thead class="text-white">
 			<th>Últimos dados</th>
             <th>Marca</th>
@@ -42,19 +42,17 @@
 		</tr>
 		{% endfor %}
 	</table>
-</div>
-<div class="text-center p-4">
-<img src="data:image/png;base64, {{grafico1|safe}}">
 </div>	
-	<div style="padding: 90px;">
+	<div style="padding: 65px;">
 		<p></p>
-		<button class="accordion text-white" style="background-image: linear-gradient(to left, rgba(27, 226, 216, .8), rgba(30, 90, 120, 1));">
-			Gráfico de tendência de mercado
-			<i class="bi bi-chevron-down text-dark"></i>
+		<button class="accordion text-white" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(30, 90, 120, 1)); background-color: rgba(27, 200, 200, .8)">
+			 Marcas por nº de vendas			
+			 <i class="bi bi-chevron-down text-dark"></i>
 		</button>
-		<div class="panel" style="background-image: linear-gradient(to left, rgba(27, 226, 216, 1), rgba(30, 90, 120, 1));">
-		<table id="bootstrapdatatable02" class="table table-striped text-center text-white" style="width: 50%; background-color: rgba(39, 48, 75, .5); margin: auto;">
-		<thead >
+		<div class="panel" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(28, 99, 120, 1)); background-color: rgba(27, 205, 205, .8)">
+			<h1 class="text-white mt-4" style="font-size: 25px;">Aqui você pode consultar os carros mais vendidos por marca de acordo com a sua cidade:</h1>
+		<table id="bootstrapdatatable02" class="table table-striped text-center text-white" style="width: 50%; background-color: rgba(0, 0, 0, 0); margin: auto;">
+		<thead>
 			<th>Posicao</th>
 			<th>Marca</th>
 			<th>N* de vendas</th>
@@ -68,11 +66,13 @@
 		{% endfor%}
 	</table>
 		</div>
-		<button class="accordion text-white" style="background-image: linear-gradient(to left, rgba(27, 226, 216, .8), rgba(30, 90, 120, 1));">Gráfico top marcas
+		<button class="accordion text-white" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(30, 90, 120, 1));
+		background-color: rgba(27, 200, 200, .8);">Modelos por nº de vendas
 			<i class="bi bi-chevron-down text-dark"></i>
 		</button>
-		<div class="panel" style="background-image: linear-gradient(to left, rgba(27, 226, 216, 1), rgba(30, 90, 120, 1));">
-	<table id="bootstrapdatatable03" class="table table-striped text-white" style="width: 50%;  background-color: rgba(39, 48, 75, .5); margin: auto;">
+		<div class="panel" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(30, 90, 120, .8)); background-color:  rgba(27, 205, 205, .8) ">
+			<h1 class="text-white mt-4" style="font-size: 25px;">Aqui você pode consultar os carros mais vendidos por modelo de acordo com a sua cidade:</h1>
+	<table id="bootstrapdatatable03" class="table table-striped text-white table-responsive" style="width: 50%; background-color: rgba(0, 0, 0, 0); margin: auto;">
 		<thead>
 			<th>Posicao</th>
 			<th>Marca</th>
@@ -91,11 +91,12 @@
 		{% endfor%}
 	</table>		
 </div>
-		<button class="accordion text-white" style="background-image: linear-gradient(to left, rgba(27, 226, 216, 1), rgba(30, 90, 120, 1));">Top veículos por margem de lucro
+		<button class="accordion text-white" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(30, 90, 120, 1)); background-color: rgba(27, 226, 216, .8)">Modelos com maiores margens de lucro
 			<i class="bi bi-chevron-down text-dark"></i>
 		</button>
-		<div class="panel" style="background-image: linear-gradient(to left, rgba(27, 226, 216, 1), rgba(30, 90, 120, 1));">
-				<table id="bootstrapdatatable04" class="table table-striped text-white" style="width: 50%; background-color: rgba(39, 48, 75, .5); margin: auto;">
+		<div class="panel" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(30, 90, 120, 1)); background-color: rgba(27, 205, 205, .8)">
+			<h1 class="text-white mt-4" style="font-size: 25px;">Aqui você pode consultar os modelos com maiores margens de lucro na sua cidade:</h1>
+	<table id="bootstrapdatatable04" class="table table-striped text-white table-responsive" style="width: 50%; background-color: rgba(0, 0, 0, 0); margin: auto;">
 		<thead>
 			<th>Posicao</th>
 			<th>Marca</th>
@@ -118,17 +119,17 @@
 	<!-- Script para formotacao de crud -->
 	<script>
 
-    	$(document).ready(function() {
-            $('#bootstrapdatatable01').DataTable({     
-            	"aLengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "All"]],
-              		"iDisplayLength": 3,
-              	"language": {
+		$(document).ready(function() {
+	        $('#bootstrapdatatable01').DataTable({     
+	        	"aLengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "Todos"]],
+	          		"iDisplayLength": 3,
+	          	"language": {
 			        "sEmptyTable": "Nenhum registro encontrado",
 					"sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
 					"sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
 					"sInfoFiltered": "(Filtrados de _MAX_ registros)",
 				    "sInfoThousands": ".",
-				    "sLengthMenu": "_MENU_ resultados por página",
+				    "sLengthMenu": "_MENU_ Resultados por página",
 				    "sLoadingRecords": "Carregando...",
 				    "sProcessing": "Processando...",
 					"sZeroRecords": "Nenhum registro encontrado",
@@ -145,7 +146,7 @@
 
        $(document).ready(function() {
           $('#bootstrapdatatable02').DataTable({     
-            "aLengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "All"]],
+            "aLengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "Todos"]],
               "iDisplayLength": 3,
             "language": {
 			        "sEmptyTable": "Nenhum registro encontrado",
@@ -153,7 +154,7 @@
 					"sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
 					"sInfoFiltered": "(Filtrados de _MAX_ registros)",
 				    "sInfoThousands": ".",
-				    "sLengthMenu": "_MENU_ resultados por página",
+				    "sLengthMenu": "_MENU_ Resultados por página",
 				    "sLoadingRecords": "Carregando...",
 				    "sProcessing": "Processando...",
 					"sZeroRecords": "Nenhum registro encontrado",
@@ -170,7 +171,7 @@
 
         $(document).ready(function() {
           $('#bootstrapdatatable03').DataTable({     
-            "aLengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "All"]],
+            "aLengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "Todos"]],
               "iDisplayLength": 3,
             "language": {
 			        "sEmptyTable": "Nenhum registro encontrado",
@@ -178,7 +179,7 @@
 					"sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
 					"sInfoFiltered": "(Filtrados de _MAX_ registros)",
 				    "sInfoThousands": ".",
-				    "sLengthMenu": "_MENU_ resultados por página",
+				    "sLengthMenu": "_MENU_ Resultados por página",
 				    "sLoadingRecords": "Carregando...",
 				    "sProcessing": "Processando...",
 					"sZeroRecords": "Nenhum registro encontrado",
@@ -196,7 +197,7 @@
 
         $(document).ready(function() {
           $('#bootstrapdatatable04').DataTable({     
-            "aLengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "All"]],
+            "aLengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "Todos"]],
               "iDisplayLength": 3,
             "language": {
 			    "sEmptyTable": "Nenhum registro encontrado",
@@ -204,7 +205,7 @@
 				"sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
 				"sInfoFiltered": "(Filtrados de _MAX_ registros)",
 			    "sInfoThousands": ".",
-			    "sLengthMenu": "_MENU_ resultados por página",
+			    "sLengthMenu": "_MENU_ Resultados por página",
 			    "sLoadingRecords": "Carregando...",
 			    "sProcessing": "Processando...",
 				"sZeroRecords": "Nenhum registro encontrado",

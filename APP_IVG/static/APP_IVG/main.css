@@ -283,18 +283,26 @@ div.content-section{
 }
 
 /*Tags do Visualizar Mercado*/
+div .dataTables_wrapper .dataTables_paginate .paginate_button {  
+  color: white !important;
+}
 
-#bootstrapdatatable01_info {
+input{
   color: white;
+  letter-spacing: 1px;
+  border: white;
+}
+
+th:hover {
+  cursor: pointer;
+  background-color: rgba(10, 10, 10, 0.1);
+  transition: .3s;
 }
 
 #células01, #células02, #células03, #células04 {
   background: transparent;
 }
 
-table {
-  cursor: pointer;
-}
 
 #adicionarNovoDado {
   position: relative;
@@ -304,7 +312,7 @@ table {
   }
   
 #bootstrapdatatable01_filter {
-   float: right; 
+   float: left; 
    margin-right: 30px;
    margin-bottom: 50px;
    color: white;
@@ -340,16 +348,20 @@ table {
 #bootstrapdatatable02_length {
   margin-top: 25px; 
   float: left; 
+  color: white;
 }
 
 #bootstrapdatatable03_length {
   margin-top: 25px; 
   float: left; 
+  color: white;
+
 }
 
 #bootstrapdatatable04_length {
   margin-top: 25px; 
-  float: left; 
+  float: left;
+  color: white;
 }
 
 #bootstrapdatatable01_info {
@@ -359,6 +371,7 @@ table {
 
 #bootstrapdatatable02_info {
   margin-top: 25px; 
+  color: white;
 }
 
 #bootstrapdatatable03_info {
@@ -368,12 +381,15 @@ table {
 
 #bootstrapdatatable04_info {
   margin-top: 25px;
+  color: white;
+
 }
 
 .pagination {
   float: right;
   margin-right: 20px;
   margin-top: 20px;
+  color: white;
 }
 
 @media screen and (max-width: 900px){

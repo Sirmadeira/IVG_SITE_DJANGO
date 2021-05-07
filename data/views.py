@@ -118,7 +118,6 @@ def AutocompleteMotor(request):
 class DadosDeGrafico(APIView):
     authentication_classes = []
     permission_classes = []
-
     def get(self, request, format=None):
-    	data = list(DataDB.objects.values('marca').all())
+    	data = list(DataDB.objects.values('marca').annotate(marcas=Count('marca')).all())
     	return Response(data)

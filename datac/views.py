@@ -33,20 +33,35 @@ def InsiraDadoC(request):
 	return render(request, 'datac/insiradadocompras.html', {'form': form})
 
 @login_required
-@usuarios_permitidos(allowed_roles=['admin'])
-def AutocompleteModelo(request):
-	term = request.GET.get('term')
-	if term:
-		modelos = list(DataDBC.objects.filter(modelo__istartswith=request.GET.get('term')).values_list('modelo', flat=True).order_by("modelo").distinct())
-		return JsonResponse(modelos, safe=False)
-	return render(request,'data.insiradado.html')
+@usuarios_permitidos(allowed_roles=['admin','cliente_checado'])
+def Update(request, pk):
+	dado = DataDBC.objects.get(id=pk)
+	form = InsiraDadosFormC(instance=dado)
+	if request.method == 'POST':
+		form = InsiraDadosFormC(request.POST, instance=dado)
+		if form.is_valid():
+			submitbutton= request.POST.get("submit")
+			form.instance.autor = request.user
+			#Transforma a data de marca modelo e cor em maiusculo
+			marca= form.cleaned_data.get('marca').upper()
+			modelo=form.cleaned_data.get('modelo').upper()
+			motor=form.cleaned_data.get('motor').upper()
+			cor=form.cleaned_data.get('cor').upper()
+			form.instance.marca= marca
+			form.instance.modelo= modelo
+			form.instance.motor= motor
+			form.instance.cor= cor
+			# Formula a margem de lucro
+			preco=form.cleaned_data.get('preco')
+			form.save()
+			messages.success(request, f'Seus dados foram atualizados com sucesso!')
+			return redirect('data-VisualizarMercado')
+	return render(request, 'datac/insiradadocompras.html', {'form':form})
 
 @login_required
-@usuarios_permitidos(allowed_roles=['admin'])
-def AutocompleteMotor(request):
-	term = request.GET.get('term')
-	if term:
-		motores = list(DataDBC.objects.filter(motor__istartswith=request.GET.get('term')).values_list('motor', flat=True).order_by("motor").distinct())
-		return JsonResponse(motores, safe=False)
-	return render(request,'data.insiradado.html')
+@usuarios_permitidos(allowed_roles=['admin','cliente_checado'])
+def Destroir(request, pk):  
+    query = DataDBC.objects.get(id=pk)  
+    query.delete()  
+    return redirect("data-VisualizarMercado")
 

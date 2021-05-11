@@ -1,5 +1,6 @@
 from django.urls import path
 from .import views
+from .views import DadosDeGrafico1
 
 urlpatterns = [
     path('', views.InsiraDado, name = 'data-InsiraDado'),
@@ -10,4 +11,5 @@ urlpatterns = [
     path('AutocompMotor', views.AutocompleteMotor, name = 'data-AutocompleteMotor'),
     path('DadosDeModeloIns', views.DadosDeModeloIns, name= 'data-DadosDeModeloIns'),
     path('DadosDeMotorIns', views.DadosDeMotorIns, name= 'data-DadosDeMotorIns'),
+    path('DadosDeGrafico1', DadosDeGrafico1.as_view(), name= 'data-DadosDeGrafico1'),
 ]

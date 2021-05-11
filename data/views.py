@@ -127,7 +127,7 @@ def AutocompleteMotor(request):
 def DadosDeModeloIns(request):
 	term= request.GET.get('term')
 	if term:
-		data=list(DataDB.objects.filter(modelo=request.GET.get('term')).values_list('modelos',flat= True).distinct())
+		data=list(DataDB.objects.filter(modelo=request.GET.get('term')).values_list('modelo',flat= True).distinct())
 		return JsonResponse(motores, safe=False)
 	return render(request,'data.insiradado.html')
 
@@ -136,6 +136,14 @@ def DadosDeModeloIns(request):
 def DadosDeMotorIns(request):
 	term= request.GET.get('term')
 	if term:
-		data=list(DataDB.objects.filter(motor=request.GET.get('term')).values_list('mmotor',flat= True).distinct())
+		data=list(DataDB.objects.filter(motor=request.GET.get('term')).values_list('motor',flat= True).distinct())
 		return JsonResponse(motores, safe=False)
 	return render(request,'data.insiradado.html')
+
+
+class DadosDeGrafico1(APIView):
+    authentication_classes = []
+    permission_classes = []
+    def get(self, request, format=None):
+    	data = DataDB.objects.values_list('modelo', flat= True).all()
+    	return Response(data)

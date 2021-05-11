@@ -190,7 +190,47 @@
 			<td>{{q.modelos}}</td>
 		</tr>
 		{% endfor%}
-		</table>	
+	</table>
+	<!-- Tabela modelos com precos medios  -->
+	<table>
+		<thead>
+			<th>Posicao</th>
+			<th>Marca</th>
+			<th>Modelo</th>
+			<th>Motor</th>
+			<th>Ano</th>
+			<th>Preço medio</th>
+		</thead>
+		{%for q in query8 %}
+		<tr id="células03" class="text-white">
+			<td>{{q.marca}}</td>
+			<td>{{q.modelo}}</td>
+			<td>{{q.motor}}</td>
+			<td>{{q.ano}}</td>
+			<td>{{q.precos}}</td>
+		</tr>
+		{% endfor%}
+	</table>
+		<!-- Tabela modelos com precos -->
+	<table>
+		<thead>
+			<th>Posicao</th>
+			<th>Marca</th>
+			<th>Modelo</th>
+			<th>Motor</th>
+			<th>Ano</th>
+			<th>Preço medio</th>
+		</thead>
+		{%for q in query9 %}
+		<tr id="células03" class="text-white">
+			<td>{{q.marca}}</td>
+			<td>{{q.modelo}}</td>
+			<td>{{q.motor}}</td>
+			<td>{{q.ano}}</td>
+			<td>{{q.precos}}</td>
+		</tr>
+		{% endfor%}
+	</table>
 </div>
 	<!-- Script para formotacao de crud e datatables -->
 	<script>

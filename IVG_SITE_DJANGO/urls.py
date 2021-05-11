@@ -61,6 +61,7 @@ urlpatterns = [
     path('', include('APP_IVG.urls')),
     # Views para dados
     path('Data/', include('data.urls')),
+    path('DataC/', include('datac.urls')),
 ]
 
 if settings.DEBUG:

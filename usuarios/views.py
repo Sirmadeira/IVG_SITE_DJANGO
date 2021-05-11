@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
+from .models import Recomendacao
 from .forms import UserCadastroForm, UserUpdateForm, EmpresaUpdateForm
 
 
@@ -33,8 +34,10 @@ def Empresa(request):
 	else:
 		u_form = UserUpdateForm(instance=request.user)
 		e_form = EmpresaUpdateForm(instance=request.user.empresadb)
-
+		user= request.user
+		recomend= Recomendacao.objects.filter(filtro=user).all()
 	contexto = {
+		'recomend': recomend,
 		'u_form': u_form,
 		'e_form': e_form,
 	}

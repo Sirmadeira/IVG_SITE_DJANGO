@@ -24,4 +24,15 @@
 	 </form>
 	</div>
 </div>	
+{% if recomend %}
+{% for q in recomend %}
+	<div class = "media-body">	
+		<h1> Recomendacao </h1>
+		<h2 class = "account-heading">{{ q.titulo }}</h2>
+		<p class = "text-secondary"> {{ q.texto }}</p>
+	</div>
+{% endfor %}
+{% else %}
+	<h2> No momento vc n tem nenhuma recomendacao </h2>
+{% endif %}
 {% endblock content %}

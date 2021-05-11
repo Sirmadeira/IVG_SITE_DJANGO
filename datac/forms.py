@@ -1,11 +1,11 @@
 from django import forms
-from .models import DataDB
+from .models import DataDBC
 
 
-class InsiraDadosForm(forms.ModelForm):
+class InsiraDadosFormC(forms.ModelForm):
 		class Meta:
-			model = DataDB
-			fields = ['marca','modelo','motor','ano','status','cor','localidade','combustivel','quilometragem','preco','lucro']
+			model = DataDBC
+			fields = ['marca','modelo','motor','ano','status','cor','localidade','combustivel','quilometragem','preco']
 			widgets = {
 			'marca': forms.TextInput(attrs={'placeholder':'Marca do carro', 'id':'marca'}),
 			'modelo': forms.TextInput(attrs={'placeholder':'Modelo do carro','id':'modelo'}),
@@ -13,12 +13,10 @@ class InsiraDadosForm(forms.ModelForm):
 			'ano': forms.NumberInput(attrs={'placeholder':'Ano do carro'}),
 			'cor': forms.TextInput(attrs={'placeholder':'Cor do carro','id':'cor'}),
 			'quilometragem': forms.NumberInput(attrs={'placeholder':'Quilometragem do carro'}),
-			'preco': forms.NumberInput(attrs={'placeholder':'Preço final do carro na venda'}),
-			'lucro': forms.NumberInput(attrs={'placeholder':'Lucro ou prejuízo pós venda do carro'}),
+			'preco': forms.NumberInput(attrs={'placeholder':'Preço final do carro na compra'}),
 			}
 			labels= {'combustivel':'Combustível',
-				     'localidade':'Local da venda'}
-
+				     'localidade':'Local da compra'}
 
 			def clean_marca(self, *args, **kwargs):
 				marca= self.cleaned_data.get('marca')
@@ -55,8 +53,3 @@ class InsiraDadosForm(forms.ModelForm):
 		                        As cores aceitas são: { cores }''')
 				else:
 					return cor
-
-
-
-
-	

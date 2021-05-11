@@ -9,5 +9,5 @@ urlpatterns = [
     path('AutocompModelo', views.AutocompleteModelo, name = 'data-AutocompleteModelo'),
     path('AutocompMotor', views.AutocompleteMotor, name = 'data-AutocompleteMotor'),
     path('DadosDeModeloIns', views.DadosDeModeloIns, name= 'data-DadosDeModeloIns'),
-    path('DadosDeMotorIns', views.DadosDeMotorIns, name= 'data- DadosDeMotorIns'),
+    path('DadosDeMotorIns', views.DadosDeMotorIns, name= 'data-DadosDeMotorIns'),
 ]

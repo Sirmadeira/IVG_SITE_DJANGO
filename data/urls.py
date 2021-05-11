@@ -1,6 +1,5 @@
 from django.urls import path
 from .import views
-from .views import DadosDeGrafico
 
 urlpatterns = [
     path('', views.InsiraDado, name = 'data-InsiraDado'),
@@ -9,5 +8,6 @@ urlpatterns = [
     path('Deletar/<str:pk>', views.Destroir, name = 'data-Deletar'),
     path('AutocompModelo', views.AutocompleteModelo, name = 'data-AutocompleteModelo'),
     path('AutocompMotor', views.AutocompleteMotor, name = 'data-AutocompleteMotor'),
-    path('DadosDeGrafico', DadosDeGrafico.as_view(), name= 'data-DadosDeGrafico'),
+    path('DadosDeModeloIns', views.DadosDeModeloIns, name= 'data-DadosDeModeloIns'),
+    path('DadosDeMotorIns', views.DadosDeMotorIns, name= 'data- DadosDeMotorIns'),
 ]

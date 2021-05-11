@@ -145,5 +145,8 @@ class DadosDeGrafico1(APIView):
     authentication_classes = []
     permission_classes = []
     def get(self, request, format=None):
-    	data = DataDB.objects.values_list('modelo', flat= True).all()
-    	return Response(data)
+    	data1 = list(DataDB.objects.values_list('marca').annotate(marcas=Count('marca')))
+    	contexto = {
+    	'data1':data1
+    	}
+    	return Response(contexto)

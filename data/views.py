@@ -127,8 +127,8 @@ def AutocompleteMotor(request):
 def DadosDeModeloIns(request):
 	term= request.GET.get('term')
 	if term:
-		data=list(DataDB.objects.filter(modelo=request.GET.get('term')).values_list('modelo',flat= True).distinct())
-		return JsonResponse(motores, safe=False)
+		modeloins=list(DataDB.objects.filter(modelo__iexact=request.GET.get('term')).values_list('modelo',flat= True).distinct())
+		return JsonResponse(modeloins, safe=False)
 	return render(request,'data.insiradado.html')
 
 @login_required
@@ -136,8 +136,8 @@ def DadosDeModeloIns(request):
 def DadosDeMotorIns(request):
 	term= request.GET.get('term')
 	if term:
-		data=list(DataDB.objects.filter(motor=request.GET.get('term')).values_list('motor',flat= True).distinct())
-		return JsonResponse(motores, safe=False)
+		motorins=list(DataDB.objects.filter(motor_iexact=request.GET.get('term')).values_list('motor',flat= True).distinct())
+		return JsonResponse(motorins, safe=False)
 	return render(request,'data.insiradado.html')
 
 

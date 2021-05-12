@@ -61,7 +61,7 @@ def VisualizarMercado(request):
 	#Query para preco medios de veiculos na venda
 	query8= DataDB.objects.values('marca','modelo','motor','ano').annotate(precos=Avg('preco'))
 	#Query para preco medios de veiculos na compra
-	query9= DataDB.objects.values('marca','modelo','motor','ano').annotate(precos=Avg('preco'))
+	query9= DataDBC.objects.values('marca','modelo','motor','ano').annotate(precos=Avg('preco'))
 	#Plots mecanica plots pode ser interessante no futuro
 	#query5= DataDB.objects.only('marca','preco')
 	#x = [x.marca for x in query5]

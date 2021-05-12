@@ -1,6 +1,8 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm, SetPasswordForm
+from captcha.fields import ReCaptchaField
 from .models import CustomUser,EmpresaDB
+
 
 
 #Mecanicas chatas para alterar validators labels etc de criacao de usuario
@@ -8,12 +10,14 @@ from .models import CustomUser,EmpresaDB
 class UserLoginForm(AuthenticationForm):
     username = forms.CharField(label='Usuário',widget=forms.TextInput())
     password = forms.CharField(label='Senha',widget=forms.PasswordInput())
+    captcha = ReCaptchaField()
     def __init__(self, *args, **kwargs):
         super(UserLoginForm, self).__init__(*args, **kwargs)
         self.error_messages['invalid_login'] = 'Usuário ou senha inválido'
         super().__init__(*args, **kwargs)
 
 class UserCadastroForm(UserCreationForm):
+	captcha = ReCaptchaField()
 	error_messages = {
         'password_mismatch': "Essas senhas não são iguais",
         'password_notvalid':'Senha precisa conter 8 caracteres',

@@ -9,7 +9,5 @@ urlpatterns = [
     path('Deletar/<str:pk>', views.Destroir, name = 'data-Deletar'),
     path('AutocompModelo', views.AutocompleteModelo, name = 'data-AutocompleteModelo'),
     path('AutocompMotor', views.AutocompleteMotor, name = 'data-AutocompleteMotor'),
-    path('DadosDeModeloIns', views.DadosDeModeloIns, name= 'data-DadosDeModeloIns'),
-    path('DadosDeMotorIns', views.DadosDeMotorIns, name= 'data-DadosDeMotorIns'),
     path('DadosDeGrafico1', DadosDeGrafico1.as_view(), name= 'data-DadosDeGrafico1'),
 ]

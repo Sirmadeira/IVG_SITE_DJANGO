@@ -122,25 +122,6 @@ def AutocompleteMotor(request):
 		return JsonResponse(motores, safe=False)
 	return render(request,'data.insiradado.html')
 
-@login_required
-@usuarios_permitidos(allowed_roles=['admin'])
-def DadosDeModeloIns(request):
-	term= request.GET.get('term')
-	if term:
-		modeloins=list(DataDB.objects.filter(modelo__iexact=request.GET.get('term')).values_list('modelo',flat= True).distinct())
-		return JsonResponse(modeloins, safe=False)
-	return render(request,'data.insiradado.html')
-
-@login_required
-@usuarios_permitidos(allowed_roles=['admin'])
-def DadosDeMotorIns(request):
-	term= request.GET.get('term')
-	if term:
-		motorins=list(DataDB.objects.filter(motor_iexact=request.GET.get('term')).values_list('motor',flat= True).distinct())
-		return JsonResponse(motorins, safe=False)
-	return render(request,'data.insiradado.html')
-
-
 class DadosDeGrafico1(APIView):
     authentication_classes = []
     permission_classes = []

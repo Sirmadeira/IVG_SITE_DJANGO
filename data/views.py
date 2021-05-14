@@ -126,10 +126,8 @@ class DadosDeGrafico1(APIView):
     authentication_classes = []
     permission_classes = []
     def get(self, request, format=None):
-    	data1 = DataDB.objects.values_list('marca').distinct()
-    	data2 = DataDB.objects.values_list('marca').annotate(marcas=Count('marca'))
+    	data1 = DataDB.objects.values_list('marca').annotate(marcas=Count('marca'))
     	contexto = {
-    	'data1':data1,
-    	'data2':data2
+    	'data1':data1
     	}
     	return Response(contexto)

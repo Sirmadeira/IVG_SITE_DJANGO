@@ -127,7 +127,10 @@ class DadosDeGrafico1(APIView):
     permission_classes = []
     def get(self, request, format=None):
     	data1 = DataDB.objects.values_list('marca').annotate(marcas=Count('marca'))
+    	data=[t[1]for t in data1]
+    	labels=[t[0]for t in data1]
     	contexto = {
-    	'data1':data1
+    		'data':data,
+    		'labels':labels
     	}
     	return Response(contexto)

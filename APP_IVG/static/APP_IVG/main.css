@@ -188,7 +188,7 @@ text-shadow: 0px 0px 5px rgba(82,168,236,.8);
   height: 60px;
   background-image: linear-gradient(to bottom, rgba(27, 226, 216, .8), rgba(30, 90, 120, 1));
   padding: 10px;
-  z-index: 1;
+  z-index: 2;
   cursor: pointer;
   border-radius: 10px;
   transition: 200ms;
@@ -401,9 +401,9 @@ height: 100%;
 width: auto;
 }
 #recomendação01, #recomendação02 {
-  height: 60px;
+  height: auto;
   width: 60px;
-  border-radius: 30px;
+  border-radius: 50%;
   box-shadow: 2px 2px 3px #999;
   background-image: linear-gradient(to bottom, rgba(27, 226, 216, .8), rgba(30, 90, 120, .8));
   border: none;

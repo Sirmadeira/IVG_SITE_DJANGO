@@ -37,15 +37,15 @@ transition: .5s;
   left: 0px;
   width: 100%;
   transition: .5s;
-  padding: 25px 0 40px 140px; 
+  padding: 25px 0 40px 140px;
   }
 
 .topnav a {
   list-style: none;
   text-decoration: none;
-  font-size: 12vw;
   letter-spacing: 2px;
   margin: 10px 0px 0px .5vw;
+  font-size: 12px;
   text-transform: uppercase;
   outline: 0 none;
   border-radius: 20px;
@@ -67,7 +67,6 @@ text-shadow: 0px 0px 5px rgba(82,168,236,.8);
 .site-header .navbar-nav .nav-link.active {
   font-weight: 500;
 }
-
 
 .sticky {
   position: fixed;
@@ -142,7 +141,6 @@ text-shadow: 0px 0px 5px rgba(82,168,236,.8);
   margin-top: 150px;
   }
 }
-
 
 /*Tags do whatsapp na main */
 
@@ -252,7 +250,9 @@ div .feedbackButton span {
   text-shadow: 0 0 40px;
 }
 
+
 /*Tags da main*/
+
 .content-section {
   background: #ffffff;
   padding: 10px 20px;
@@ -390,6 +390,11 @@ div.content-section{
 .active .bi-chevron-down {
   transform: rotate(180deg);
 }
+/*Tags da página inserirDados*/
+fieldset div label  {
+  color: black;
+}
+
 
 /*Tags da página empresas*/
 .alert {
@@ -400,18 +405,46 @@ margin-bottom: 0;
 height: 100%;
 width: auto;
 }
-#recomendação01, #recomendação02 {
+div #recomendação01 {
+  height: auto;
+  width: 60px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 3px #999;
+  border: none;
+  background-color: rgba(27, 226, 216, 1); 
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(30, 90, 120, 1));
+  padding: 7px 16px 7px 7px; 
+  right: 110px; 
+  bottom: 35px; 
+  width: 60px; 
+  position: fixed; 
+  z-index: 1;
+}
+div #recomendação02 {
   height: auto;
   width: 60px;
   border-radius: 50%;
   box-shadow: 2px 2px 3px #999;
   background-image: linear-gradient(to bottom, rgba(27, 226, 216, .8), rgba(30, 90, 120, .8));
   border: none;
+  padding: 7px 16px 7px 7px; 
+  right: 110px; 
+  bottom: 35px; 
+  width: 60px; 
+  position: fixed; 
+  z-index: 1;
 }
 
-#recomendação01, #recomendação02:hover {
+
+div #recomendação01:hover {
   background-image: linear-gradient(to bottom, rgba(27, 100, 100, .8), rgba(30, 90, 120, .8));
 }
+
+div #recomendação02:hover {
+  background-image: linear-gradient(to bottom, rgba(27, 100, 100, .8), rgba(30, 90, 120, .8));
+}
+
+
 
 /*Tags do Visualizar Mercado*/
 
@@ -457,7 +490,7 @@ table {
   float: left;
   }
   
-#bootstrapdatatabl01_filter {
+#bootstrapdatatable01_filter {
    float: left;
    margin-right: 30px;
    margin-bottom: 50px;

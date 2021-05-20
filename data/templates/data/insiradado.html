@@ -3,10 +3,10 @@
 {% load static %}	
 {% block content %}
 	<div class="container-fluid" style=" background-image: url({% static 'imagens/Inserir-Dados-Background.jpg' %}); background-size: cover; height: auto; margin: 0px 0 0 0; padding: 50px; width: 100%;">
-	<div class= "content-section text-dark">
+	<div class= "content-section">
 		<form action="" method= "POST">
 			{% csrf_token %}
-			<fieldset class = 'form-group'style="margin-top: 200px auto">
+			<fieldset class = 'form-group text-dark'style="margin-top: 200px auto;">
 				<legend class= "border-bottom mb-4"> Insira seus dados de venda </legend>
 				{{ form|crispy }}
 			</fieldset>
@@ -58,8 +58,7 @@
 			</div>		
 		</form>
 	</div>
-	</div>
-	
+	</div>	
 <style>
   .ui-autocomplete {
     max-height: 200px;

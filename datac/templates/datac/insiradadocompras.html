@@ -3,10 +3,10 @@
 {% load static %}	
 {% block content %}
 	<div class="container-fluid" style=" background-image: url({% static 'imagens/Inserir-Dados-Background.jpg' %}); background-size: cover; height: auto; margin: 50px 0 0 0; padding: 50px; width: 100%;">
-	<div class= "content-section text-dark">
+	<div class= "content-section">
 		<form action="" method= "POST">
 			{% csrf_token %}
-			<fieldset class = 'form-group'>
+			<fieldset class = 'form-group text-dark'>
 				<legend class= "border-bottom mb-4"> Insira seus dados de compra </legend>
 				{{ form|crispy }}
 			</fieldset>
@@ -52,12 +52,6 @@
 			            minLength: 1
 			        });
 			    });
-			</script>
-			<script>
-				// Links de import do backend, 
-				// Are u sure? Primeiro modelos, segundo motor
-				var endpoint = '{% url 'data-DadosDeModeloIns' %}'
-				var endpoint2 = '{% url 'data-DadosDeMotorIns' %}'							
 			</script>
 			<div class = "form-group">
 				<button class= "btn btn-outline-info" name= 'submit' type= "submit"> Inserir </button>

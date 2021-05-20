@@ -13,7 +13,7 @@ body {
 }
 
 /*Animacao para entrada de janela */
-h1, h5, p, ol, span, form{
+h1, h5, p, ol, span, form {
    animation: TransiçãoY 600ms;
 }
 
@@ -43,7 +43,7 @@ transition: .5s;
 .topnav a {
   list-style: none;
   text-decoration: none;
-  font-size: 3vw;
+  font-size: 12vw;
   letter-spacing: 2px;
   margin: 10px 0px 0px .5vw;
   text-transform: uppercase;
@@ -119,7 +119,7 @@ text-shadow: 0px 0px 5px rgba(82,168,236,.8);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 12px;
 }
 
 @media screen and (max-width: 1300px){
@@ -141,6 +141,115 @@ text-shadow: 0px 0px 5px rgba(82,168,236,.8);
   .responsive #home {
   margin-top: 150px;
   }
+}
+
+
+/*Tags do whatsapp na main */
+
+.float .my-float {
+  margin-right: 15px;
+  margin-top: 10px;
+  bottom: 0;
+  color: white;
+
+}
+
+.float {
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:40px;
+  right:40px;
+  background-color:#25d366;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  font-size:30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+
+.float:hover {
+  background-color: #188741;
+  color:#FFF;
+  transition: 200ms;
+}
+/*Tags do feedback na main */
+
+.feedbackButton {
+  position: fixed;
+  top: 50%;
+  right: -35px;
+  transform: rotate(270deg);
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: lighter;
+  color: white;
+  width: auto;
+  height: 60px;
+  background-image: linear-gradient(to bottom, rgba(27, 226, 216, .8), rgba(30, 90, 120, 1));
+  padding: 10px;
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 200ms;
+}
+
+.feedbackButton:hover {
+  right: -28px;
+  transition: 200ms;
+  box-shadow: 0px 0px 40px #999;
+  transition: 200ms;
+
+
+}
+
+div .feedbackButton span {
+  transform: rotate(90deg);
+}
+
+.app {
+  position: fixed;
+  width: 500px;
+  max-width: 500px;
+  margin-right: 10px;
+  right: 50px;
+  top: 35%;
+  background-image: linear-gradient(to bottom, rgba(27, 226, 216, .8), rgba(30, 90, 120, 1));
+  padding: 10px 0 50px 20px;
+  border-radius: 10px;
+  transition: 200ms;
+  z-index: 2;
+}
+#feedback {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  width: 90px;
+  height: 90px;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+.radio {
+  display: none;
+}
+.radio ~ span {
+  font-size: 3rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.radio:checked ~ span {
+  filter: grayscale(0);
+  font-size: 4rem;
+  text-shadow: 0 0 40px;
 }
 
 /*Tags da main*/
@@ -278,13 +387,40 @@ div.content-section{
   transition: .2s ease-out;
 }
 
-.active .bi {
+.active .bi-chevron-down {
   transform: rotate(180deg);
 }
 
+/*Tags da página empresas*/
+.alert {
+margin-top: 120px;
+margin-bottom: 0;
+}
+#semRecomendação, #comRecomendação {
+height: 100%;
+width: auto;
+}
+#recomendação01, #recomendação02 {
+  height: auto;
+  width: 60px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 3px #999;
+  background-image: linear-gradient(to bottom, rgba(27, 226, 216, .8), rgba(30, 90, 120, .8));
+  border: none;
+}
+
+#recomendação01, #recomendação02:hover {
+  background-image: linear-gradient(to bottom, rgba(27, 100, 100, .8), rgba(30, 90, 120, .8));
+}
+
 /*Tags do Visualizar Mercado*/
+
 div .dataTables_wrapper .dataTables_paginate .paginate_button {  
   color: white !important;
+}
+
+label {
+  color: white;
 }
 
 input{
@@ -298,11 +434,15 @@ th:hover {
   background-color: rgba(10, 10, 10, 0.1);
   transition: .3s;
 }
-#bootstrapdatatable01_info {
+#bootstrapdatatable01_info, #bootstrapdatatable02_info, 
+#bootstrapdatatable03_info, #bootstrapdatatable04_info, 
+#bootstrapdatatable05_info, #bootstrapdatatable06_info, 
+#bootstrapdatatable07_info, #bootstrapdatatable08_info, 
+#bootstrapdatatable09_info {
   color: white;
 }
 
-#células01, #células02, #células03, #células04 {
+#células01, #células02, #células03, #células04, #células05, #células06, #células07, #células08, #células09 {
   background: transparent;
 }
 
@@ -313,12 +453,12 @@ table {
 #adicionarNovoDado {
   position: relative;
   cursor: pointer;
-  margin: 0;
+  margin: 0px 0 10px 0;
   float: left;
   }
   
 #bootstrapdatatabl01_filter {
-   float: right;
+   float: left;
    margin-right: 30px;
    margin-bottom: 50px;
    color: white; 

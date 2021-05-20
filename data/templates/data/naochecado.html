@@ -1,5 +1,10 @@
 {% extends "APP_IVG/layout.html" %}
 {% load static %}
 {% block content %}
-	<h1>O seu usuario ainda nao foi verificado por nos favor aguardar enquanto contatamos voce pelo seu email, verifique se seu email esta correto porque essa nossa unica via de contato! Voce pode acessar e alterar ele na janela sua empresa!</h1>
+<div class="container-fluid" style=" background-image: url({% static 'imagens/Inserir-Dados-Background.jpg' %}); background-size: cover; height: auto; margin: 0 0 0 0; padding: 100px; width: 100%;">
+    <div class="container-fluid p-4" style="background: rgba(0, 0, 0, .8);">
+		<h1>O seu usuário ainda não foi verificado por nós. Por favor, aguardar enquanto contatamos você pelo seu email, verifique se seu email está correto porque essa é a nossa única via de contato! Você pode acessar e alterar ele na janela "sua empresa"!
+		</h1>
+	</div>
+</div>
 {% endblock content %}

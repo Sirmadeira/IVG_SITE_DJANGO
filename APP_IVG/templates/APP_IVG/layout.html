@@ -26,6 +26,13 @@
     <!-- Scripts para javascript e chartjs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.24/b-1.7.0/datatables.min.js"></script>
+    <!-- Scripts para sweetalert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+     <!-- link para favicon -->
+    <link rel="icon" href="{% static 'imagens/favicon-IVG-azulclaro.gif' %}" type="image/gif" sizes="1000x1000">
+    <!-- link para crypto.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 	{% if titulo %}
 		<title>IVG - {{ titulo }}</title>
 	{% else %}	
@@ -58,8 +65,57 @@
           </div>
     </header>
     <!-- Final de navbar -->
-    <main id="main" role="main" class="container-fluid p-0 mx-0" style="margin-top: 140px;">
+    <main id="main" role="main" class="container-fluid p-0 mx-0" style="margin-top: 100px;">
+      <!-- começo da box feedback -->
+    <a class="feedbackButton" onclick="feedbackButton()">feedback</a>
+      <div id = "feedbackBox" class="app d-none">
+        <h1>Como você classificaria a sua experiência?</h1>
+        <p>Seu feedback é muito importante para gente:</p>
+        <div id="feedback" class="form-group">
+          <div class="item">
+            <label for="0">
+            <input class="radio" type="radio" name="feedback" id="0" value="0">
+            <span>🤬</span>
+          </label>
+          </div>
+
+          <div class="item">
+            <label for="1">
+            <input class="radio" type="radio" name="feedback" id="1" value="1">
+            <span>🙁</span>
+          </label>
+          </div>
+
+          <div class="item">
+            <label for="2">
+            <input class="radio" type="radio" name="feedback" id="2" value="2">
+            <span>😶</span>
+          </label>
+          </div>
+
+          <div class="item">
+            <label for="3">
+            <input class="radio" type="radio" name="feedback" id="3" value="3">
+            <span>😁</span>
+          </label>
+          </div>
+
+          <div class="item">
+            <label for="4">
+              <input class="radio" type="radio" name="feedback" id="4" value="4">
+              <span>😍</span>
+            </label>
+            <div class="">
+              <a style="position: absolute; right: 40%; bottom: 10px;" class="btn btn-primary">Enviar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+     <!-- icone do whatsapp -->
 	   <div class="col-md mx-auto mt-0 p-0">
+      <a href="https://api.whatsapp.com/send?phone=5511974984826" class="float" target="_blank">
+          <i class="bi bi-whatsapp my-float"></i>
+      </a>
       {% if messages %}
         {% for message in messages %}
           <div class= "alert alert-{{ message.tags }}">
@@ -204,6 +260,19 @@
           panel.style.maxHeight = panel.scrollHeight + 30 + "px";
         } 
       });
+    }
+    </script>
+    <script type="text/javascript">
+    //Função para ativar a box class = app ddo feedback
+    function feedbackButton() {
+      var x = document.getElementById("feedbackBox")
+      var y = document.getElementById("overlay")
+      if (x.className === "app d-none") {
+        x.classList.remove("d-none")
+      }
+      else {
+        x.classList.add("d-none")
+      }
     }
     </script> 
     <!-- Bootstrap scripts o do jquery foi retirado para evitar conflitos-->

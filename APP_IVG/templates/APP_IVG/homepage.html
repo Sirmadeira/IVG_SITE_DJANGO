@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <!-- Carrossel, mecanica de rotacao  e comprovante de numeros -->
-	<div id="carouselExampleIndicators" class="carousel slide text-center" style="height: auto; max-height: 900px; width: 100%;" data-bs-ride="carousel">
+	<div id="carouselExampleIndicators" class="carousel slide text-center" style="height: auto; max-height: 900px; width: 100%; margin-top: 100px;" data-bs-ride="carousel">
 	  <div class="carousel-indicators mx-auto my-0 text-center" style="width: 30vw;">
 	    <button data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
 	    <button data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
@@ -17,7 +17,7 @@
 	      <div class="carousel-caption d-lg-block text-center my-auto p-1">
 	        <div class="" style="background-color: black; opacity: .9; margin-bottom: 12vw;">
 	          <h5 class="text-truncate" style="color: white; font-size: 3vw; letter-spacing: 4px;">Bem Vindo à IVG</h5>
-	          <p style="font-size: 2vw; letter-spacing: 2px; max-width: 100%;">Inteligência de mercado, especializada.</p>
+	          <p style="font-size: 2vw; letter-spacing: 2px; max-width: 100%;">Inteligência especializada de mercado.</p>
 	        </div>
 	      </div>
 	    </div>
@@ -28,7 +28,7 @@
 	        <div style="background-color: black; opacity: .9; height: auto; margin-bottom: 12vw;">
 	        <h5 style="color:white; font-size: 3vw; letter-spacing: 4px;">Algoritmos de mercado em formação
 	        </h5>
-	        <p  style="font-size: 2vw; letter-spacing: 2px; opacity: .9;">No momento estamos trabalhando em algoritmos de inteligência de mercado.
+	        <p  style="font-size: 2vw; letter-spacing: 2px; opacity: .9;">No momento, estamos trabalhando em algoritmos de inteligência de mercado.
 	        </p>
 	        </div>
 	    </div>
@@ -53,25 +53,6 @@
 	      </div>
 	    </div>
 	  </div>
-	  <div class="carousel-item" style="height: auto; max-height: 900px;">
-      <img class="d-block w-100" src="{% static 'imagens/Homepage-Slide03.jpg' %}" alt="Terceiro Slide" style="opacity: 1;">
-      	<div class="col-lg mx-auto text-center carousel-caption d-lg-block"  style="margin-bottom: .6vw;">
-          <h5 class="text-center" style="color:white; font-size: 3vw;"></h5>
-          <p class="text-center mx-auto d-none" style="font-size: 1.4vw; letter-spacing: 3px; background-color: black; opacity: .9;"> Tabela de inteligência de mercado a ser emitida no site</p> 
-      	</div>
-      </div>
-      <div class="carousel-item" style="height: auto; max-height: 900px;">
-	      <img class="d-block w-100" src="{%static 'imagens/Homepage-Slide04.jpg' %}" alt="Quarto Slide" style="opacity: 1">
-	    </div>
-	  <div class="carousel-item" style="height: auto; max-height: 900px;">
-	    <img class="d-block w-100" src="{%static 'imagens/Homepage-Slide05.jpg' %}" alt="Quinto Slide" style="opacity: 1">
-	    <div class="carousel-caption d-lg-block">
-	        <div style="background-color: black; opacity: .9; margin-bottom: 12vw;">
-	    		<h5 style="color:white; font-size: 2.5vw;"></h5>
-	    		<p  style="font-size: 2vw; letter-spacing: 2px;">Por fim, lançaremos o monitoramento em tempo real das precificações automotivas a fim de ajudar os revendedores a compreenderem a oferta e procura da região.</p>
-	        </div>
-	    </div>
-	  </div>
 	 </div>
 	 <!-- Carrossel botoes de controle anterior e proximo -->
 	 <button class="carousel-control-prev" data-bs-target="#carouselExampleIndicators" role="button" data-bs-slide="prev">
@@ -89,17 +70,17 @@
 	    <div class="col-lg m-2 pr-0">
 	        <img class="text-center" src="{% static 'imagens/Homepage-Main-Segurança.png' %}" alt="Responsive image" style="min-height: 100px; max-height: 150px;">
 	        <h1 style="margin: auto; font-size: 20px; letter-spacing: 2px; margin-top: 3px; margin-bottom: 5px;">Segurança</h1>
-	        <p class="text-justify" style="font-size: 16px; letter-spacing: 2px;">A IVG garante a proteção de seus dados. Tambem garantimos nenhum dos nossos gráficos, irá destacar somente os dados da sua empresa. Tornando impossível identificar qual dos parceiros foi o emitente.</p>      
+	          <p class="text-justify" style="font-size: 16px; letter-spacing: 2px;">A IVG garante a proteção de seus dados, que são ocultados entre usuários na nossa plataforma, tornando impossível identificar qual dos parceiros foi o emitente.</p>      
 	        </div>
 	        <div class="col-lg m-2">
 	           <img class="text-center mb-1" src="{% static 'imagens/Homepage-Main-Info.png' %}" alt="Responsive image" style="min-height: 100px; max-height: 150px">
 	            <h1 style="margin: auto; font-size: 20px; letter-spacing: 2px;">Informações de Dados<h1>
-	          <p class="text-justify" style="font-size: 16px; letter-spacing: 2px; margin-top: 5px;">Nossa função é reformular os dados seus e de seus concorrente para que todos tenham a capacidade de ter uma leitura de mercado que beira a perfeição de uma máquina.</p>
+	          <p class="text-justify" style="font-size: 16px; letter-spacing: 2px; margin-top: 5px;">Nossa função é reformular os seus dados e de seus concorrente para que todos tenham a capacidade de ter uma leitura mercadológica que beira a perfeição de uma máquina.</p>
 	        </div>
 	        <div class="col-lg m-2">
 	           <img class="text-center mb-3" src="{% static 'imagens/Homepage-Main-Antifraude.png' %}" alt="Responsive image" style="min-height: 100px; max-height: 140px; margin: 0 auto;">
 	        <h1 style="font-size: 20px; margin: auto; letter-spacing: 2px;">Antifraude<h1>
-	           <p class="text-justify" style="font-size: 16px; letter-spacing: 2px;  margin-top: 5px">Atuamos de maneira totalmente jurídica, qualquer oferta para venda de seus dados será severamente rejeitada, e caso nosso sistema de segurança venha a ser rompido o parceiro será devidamente ressarcido, pelo nosso seguro.</p>
+	          <p class="text-justify" style="font-size: 16px; letter-spacing: 2px;  margin-top: 5px">Atuamos de maneira totalmente jurídica, se recebermos qualquer oferta de compra pelo seus dados, será severamente rejeitada e, caso nosso sistema de segurança venha a ser rompido, você, nosso parceiro, será devidamente ressarcido pelo nosso seguro.</p>
 	        </h1>
 	    </div>
 	  </div>

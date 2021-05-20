@@ -26,6 +26,14 @@
     <!-- Scripts para javascript e chartjs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.24/b-1.7.0/datatables.min.js"></script>
+    <!-- Scripts para sweetalert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- link para favicon -->
+    <link rel="icon" href="{% static 'imagens/favicon-IVG-azulclaro.gif' %}" type="image/gif" sizes="1000x1000">
+    <!-- link para crypto.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+
 	{% if titulo %}
 		<title>IVG - {{ titulo }}</title>
 	{% else %}	
@@ -41,14 +49,14 @@
               <a class="menu" id="sobre" href="{% url 'APP_IVG-Sobre' %}">Sobre</a>
               <a class="menu" id="faq" href="{% url 'APP_IVG-Faq' %}">Faq</a>
               {% if user.is_authenticated %}
-                <a class="menu" id="inserirDadosC" href="{% url 'datac-InsiraDadoC' %}">Inserir dados compras</a>
-                <a class="menu" id="inserirDados" href="{% url 'data-InsiraDado' %}">Inserir dados vendas</a>
-                <a class="menu" id="dadosDeMercado" href="{% url 'data-VisualizarMercado' %}">Dados de mercado</a>
-                <a class="menu" id="suaEmpresa" href="{% url 'Empresa' %}">Sua empresa</a>
-                <a class="menu" id="logout"  href="{% url 'Logout' %}">Logout</a>
+              <a class="menu" id="inserirDadosC" href="{% url 'datac-InsiraDadoC' %}">Inserir dados compras</a>
+              <a class="menu" id="inserirDados" href="{% url 'data-InsiraDado' %}">Inserir dados vendas</a>
+              <a class="menu" id="dadosDeMercado" href="{% url 'data-VisualizarMercado' %}">Dados de mercado</a>
+              <a class="menu" id="suaEmpresa" href="{% url 'Empresa' %}">Sua empresa</a>
+              <a class="menu" id="logout"  href="{% url 'Logout' %}">Logout</a>
               {% else %}
-                <a class="menu" id="login" href="{% url 'Login' %}">Login</a>
-                <a class="menu" id="register" href="{% url 'Cadastro' %}">Register</a>
+              <a class="menu" id="login" href="{% url 'Login' %}">Login</a>
+              <a class="menu" id="register" href="{% url 'Cadastro' %}">Register</a>
               {% endif %}
               <a id="myHamburguer" class="hamburguer" onclick="myFunction()">
                 <div class="bar1" id="bar1"></div>
@@ -58,8 +66,56 @@
           </div>
     </header>
     <!-- Final de navbar -->
-    <main id="main" role="main" class="container-fluid p-0 mx-0" style="margin-top: 140px;">
+    <main id="main" role="main" class="container-fluid p-0 mx-0" style="margin-top: 100px;">
+    <!-- começo da box feedback -->
+    <a class="feedbackButton" onclick="feedbackButton()">feedback</a>
+      <div id = "feedbackBox" class="app d-none">
+        <h1>Como você classificaria a sua experiência?</h1>
+        <p>Seu feedback é muito importante para gente:</p>
+        <div id="feedback" class="form-group">
+          <div class="item">
+            <label for="0">
+            <input class="radio" type="radio" name="feedback" id="0" value="0">
+            <span>🤬</span>
+          </label>
+          </div>
+
+          <div class="item">
+            <label for="1">
+            <input class="radio" type="radio" name="feedback" id="1" value="1">
+            <span>🙁</span>
+          </label>
+          </div>
+
+          <div class="item">
+            <label for="2">
+            <input class="radio" type="radio" name="feedback" id="2" value="2">
+            <span>😶</span>
+          </label>
+          </div>
+
+          <div class="item">
+            <label for="3">
+            <input class="radio" type="radio" name="feedback" id="3" value="3">
+            <span>😁</span>
+          </label>
+          </div>
+
+          <div class="item">
+            <label for="4">
+            <input class="radio" type="radio" name="feedback" id="4" value="4">
+            <span>😍</span>
+          </label>
+            <a style="position: fixed; right: 270px; bottom: 130px;" class="btn btn-primary">Enviar</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- icone do whatsapp -->
 	   <div class="col-md mx-auto mt-0 p-0">
+        <a href="https://api.whatsapp.com/send?phone=5511974984826" class="float" target="_blank">
+          <i class="bi bi-whatsapp my-float"></i>
+        </a>
       {% if messages %}
         {% for message in messages %}
           <div class= "alert alert-{{ message.tags }}">
@@ -205,7 +261,36 @@
         } 
       });
     }
-    </script> 
+    </script>
+    <script>
+      function crypt() {
+      const CryptoJS = require("crypto-js");
+      const encryptWithAES = (text) => {
+        const passphrase = "123";
+        return CryptoJS.AES.encrypt(text, passphrase).toString();
+      
+      const decryptWithAES = (ciphertext) => {
+        const passphrase = "123";
+        const bytes = CryptoJS.AES.decrypt(ciphertext, passphrase);
+        const originalText = bytes.toString(CryptoJS.enc.Utf8);
+        return originalText;
+            };
+          }
+        }
+    </script>
+    <script type="text/javascript">
+    //Função para ativar a box class = app ddo feedback
+    function feedbackButton() {
+      var x = document.getElementById("feedbackBox")
+      var y = document.getElementById("overlay")
+      if (x.className === "app d-none") {
+        x.classList.remove("d-none")
+      }
+      else {
+        x.classList.add("d-none")
+      }
+    }
+    </script>
     <!-- Bootstrap scripts o do jquery foi retirado para evitar conflitos-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

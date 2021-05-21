@@ -134,3 +134,16 @@ class DadosDeGrafico1(APIView):
     		'labels':labels
     	}
     	return Response(contexto)
+
+class DadosDeGrafico2(APIView):
+    authentication_classes = []
+    permission_classes = []
+    def get(self, request, format=None):
+    	data1 = DataDBC.objects.values_list('marca').annotate(marcas=Count('marca'))
+    	data=[t[1]for t in data1]
+    	labels=[t[0]for t in data1]
+    	contexto = {
+    		'data':data,
+    		'labels':labels
+    	}
+    	return Response(contexto)

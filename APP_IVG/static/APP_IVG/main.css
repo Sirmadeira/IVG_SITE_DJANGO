@@ -576,6 +576,12 @@ table {
   }
   }
 
+@media screen and (min-width: 1200px){
+ #containerVisualizarMercado {
+  width: 85%;
+  margin: 0 auto;
+ }
+
 /* O codigo de animacao */
 @keyframes TransiçãoY {
   from {opacity: 0; transform: translateY(-20px);}

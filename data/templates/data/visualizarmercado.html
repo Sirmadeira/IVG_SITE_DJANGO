@@ -79,8 +79,8 @@
 				<td> {{ q.get_combustivel_display }} </td>
 				<td> {{ q.quilometragem }} </td>
 				<td> R${{ q.preco }} </td>
-				<td><a onclick="update(event)" class="btn btn-info" href="{% url 'data-Update' q.id %}">Update</a></td>
-				<td><a onclick="deletar(event)" class="btn btn-danger" href="{% url 'data-Deletar' q.id %}"> Deletar</a></td>
+				<td><a onclick="update(event)" class="btn btn-info" href="{% url 'datac-Update' q.id %}">Update</a></td>
+				<td><a onclick="deletar(event)" class="btn btn-danger" href="{% url 'datac-Deletar' q.id %}"> Deletar</a></td>
 			</tr>
 		{% endfor %}
 		</table>

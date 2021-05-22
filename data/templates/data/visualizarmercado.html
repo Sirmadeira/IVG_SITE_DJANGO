@@ -593,7 +593,7 @@
 	      	Chart.defaults.color = '#ffff';
 	      	var options = {
 			   tooltips: {
-			     enabled: false
+			     enabled: true
 			   },
 			   plugins: {
 			     datalabels: {
@@ -662,13 +662,13 @@
 	      url: endpoint,
 	      success: function(data){
 	      	var ctx = document.getElementById('myChart2').getContext('2d');
-	      	Chart.defaults.color = '#ffff';
+	      	Chart.defaults.color = '#fafafa';
 	      	var options = {
 			   tooltips: {
-			     enabled: false
+			     enabled: true
 			   },
 			   plugins: {
-			     datalabels: {
+				     datalabels: {
 			       formatter: (value, ctx) => {
 			         let datasets = ctx.chart.data.datasets;
 			         if (datasets.indexOf(ctx.dataset) === datasets.length - 1) {
@@ -681,7 +681,16 @@
 			       },
 			       color: '#fff',
 			     }
-			   }
+			   },
+	      		scales: {
+			        y: {
+			            display: false,
+			            ticks: {
+			                beginAtZero: true,   // minimum value will be 0.
+			              	// <=> //
+			            }
+			        }
+			    }
 			 };
 			var myChart = new Chart(ctx, {
 			    type: 'doughnut',
@@ -714,7 +723,7 @@
 
 
 			            ],
-			            borderWidth: 1
+			            borderWidth: 1,
 			        }]
 			    },
 			    options: options

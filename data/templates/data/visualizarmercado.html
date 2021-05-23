@@ -2,9 +2,9 @@
 {% load static %}
 {% block content %}
 <div class="container-fluid" style="background-color: rgba(21, 64, 89, .5); background-size: cover; height: auto; margin: 100px 0; padding: 20px; width: 100%; margin-bottom: 0px;">
-	<div class="container-fluid" style="padding: 100px; width: 90%; background-image: linear-gradient(to bottom, rgba(27, 226, 216, .8), rgba(30, 90, 120, .8)); margin-top: 50px;">
+	<div class="container-fluid" style="padding: 10vw; width: 90%; background-image: linear-gradient(to bottom, rgba(27, 226, 216, .8), rgba(30, 90, 120, .8)); margin-top: 50px;">
 		<h1 class="text-white mb-4" style="font-size: 25px;">Aqui você pode controlar os seus dados de venda:</h1>
-		<a id="adicionarNovoDado" href="{% url 'data-InsiraDado' %}" class="btn btn-primary">Adicionar novo dado</a>
+		<a id="adicionarNovoDado" href="{% url 'data-InsiraDado' %}" class="btn btn-primary mt-0">Adicionar novo dado</a>
 	<!-- Tabela crud vendas -->
 		<table id="bootstrapdatatable01" class="table table-striped table-responsive" style="width: 100%; margin bottom: 20px;">
 			<thead class="text-white">
@@ -46,9 +46,9 @@
 		</table>
 	</div>
 	<!-- Tabela crud compras -->	
-	<div class="container-fluid" style="padding: 100px; width: 90%; background-image: linear-gradient(to bottom, rgba(27, 226, 216, .8), rgba(30, 90, 120, .8)); margin-top: 100px;">
+	<div class="container-fluid" style="padding: 10vw; width: 90%; background-image: linear-gradient(to bottom, rgba(27, 226, 216, .8), rgba(30, 90, 120, .8)); margin-top: 100px;">
 		<h1 class="text-white mb-4" style="font-size: 25px;">Aqui você pode controlar os seus dados de compra:</h1>
-		<a id="adicionarNovoDado" href="{% url 'data-InsiraDado' %}" class="btn btn-primary">Adicionar novo dado</a>
+		<a id="adicionarNovoDado" href="{% url 'data-InsiraDado' %}" class="btn btn-primary mt-0">Adicionar novo dado</a>
 		<table id="bootstrapdatatable06" class="table table-striped table-responsive text-white"  style="width: 100%; margin bottom: 20px;">
 			<thead>
 				<th>Últimos dados</th>
@@ -84,7 +84,7 @@
 		{% endfor %}
 		</table>
 	</div>
-	<div class="container-fluid" style="padding: 100px; width: 90%; background-image: linear-gradient(to bottom, rgba(27, 226, 216, .8), rgba(30, 90, 120, .8)); margin-top: 100px;">
+	<div class="container-fluid px-0" style="padding: 100px; width: 90%; background-image: linear-gradient(to bottom, rgba(27, 226, 216, .8), rgba(30, 90, 120, .8)); margin-top: 100px;">
 		<div class="mx-auto" style="width: 60vw; height: auto;">
 			<div class="container">
 			    <div class="row"> 
@@ -99,7 +99,7 @@
 			</div>
 		</div>
 	</div>
-	<div style="padding: 65px;">
+	<div style="padding: 6.5vw;">
 		<p></p>
 		<button class="accordion text-white" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(30, 90, 120, 1)); background-color: rgba(27, 200, 200, .8)">
 			 Marcas por nº de vendas			

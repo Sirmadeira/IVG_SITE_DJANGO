@@ -2,8 +2,8 @@
 {% load crispy_forms_tags %}
 {% load static %}
 {% block content %}
-<div class="container-fluid" style=" background-image: url({% static 'imagens/Login-Cadastro-Background.jpg' %}); background-size: cover; height: auto; margin: -50px 0 0 0; padding: 140px; width: 100%; ">
-	<div class= "content-section">
+<div class="container-fluid px-0" style=" background-image: url({% static 'imagens/Login-Cadastro-Background.jpg' %}); background-size: cover; height: auto; margin: -50px 0 0 0; padding: 140px; width: 100%; ">
+	<div class= "content-section" style="min-width: 300px;">
 		<form method= "POST">
 			{% csrf_token %}
 			<fieldset class = 'form-group text-dark'>

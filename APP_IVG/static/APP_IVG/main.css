@@ -19,15 +19,15 @@ h1, h5, p, ol, span, form {
 
 /*Tags da navbar*/
 .logo{
-position: absolute;
-top: -45px;
+position: relative;
+top: 120px;
 left: 0;
 height: 200px;
 width: auto;
+margin-top: -250px;
 }
 
 .stickyLogo {
-top: -60px;
 transition: .5s;
 }
 
@@ -37,7 +37,7 @@ transition: .5s;
   left: 0px;
   width: 100%;
   transition: .5s;
-  padding: 25px 0 40px 140px;
+  padding: 25px 0 40px 0px;
   }
 
 .topnav a {
@@ -75,7 +75,7 @@ text-shadow: 0px 0px 5px rgba(82,168,236,.8);
   background-color: white;
   transition: .5s;
   color: black;
-  padding: 14px 0 15px 140px;
+  padding: 14px 0 15px 0px;
  }
 
 /*Tags do hamburguer*/
@@ -138,7 +138,7 @@ text-shadow: 0px 0px 5px rgba(82,168,236,.8);
   }
 
   .responsive #home {
-  margin-top: 150px;
+  margin-top: 50px;
   }
 }
 

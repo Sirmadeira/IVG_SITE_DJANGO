@@ -8,7 +8,7 @@ class InsiraDadosForm(forms.ModelForm):
 			fields = ['marca','modelo','motor','ano','status','cor','localidade','combustivel','quilometragem','preco','lucro']
 			widgets = {
 			'marca': forms.TextInput(attrs={'placeholder':'Marca do carro', 'id':'marca'}),
-			'modelo': forms.TextInput(attrs={'placeholder':'Modelo do carro','id':'modelo'}),
+			'modelo': forms.TextInput(attrs={'placeholder':'Modelo do carro de acordo com o renavan','id':'modelo'}),
 			'motor': forms.TextInput(attrs={'placeholder':'Motor do carro','id':'motor'}),
 			'ano': forms.NumberInput(attrs={'placeholder':'Ano do carro'}),
 			'cor': forms.TextInput(attrs={'placeholder':'Cor do carro','id':'cor'}),
@@ -17,7 +17,7 @@ class InsiraDadosForm(forms.ModelForm):
 			'lucro': forms.NumberInput(attrs={'placeholder':'Lucro ou prejuízo pós venda do carro'}),
 			}
 			labels= {'combustivel':'Combustível',
-				     'localidade':'Local da venda'}
+				     'localidade':'Localidade do cliente'}
 
 
 			def clean_marca(self, *args, **kwargs):
